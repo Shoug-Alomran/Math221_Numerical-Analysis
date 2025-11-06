@@ -59,7 +59,7 @@ All three methods converged to the same correct root, but the **Newton–Raphson
 | Secant | 2.000000 | 6 |
 
 All methods converged to the same correct root (**x = 2**).  
-⚡ The **Newton–Raphson method** achieved the fastest convergence among the three.  
+The **Newton–Raphson method** achieved the fastest convergence among the three.  
 
 ---
 
