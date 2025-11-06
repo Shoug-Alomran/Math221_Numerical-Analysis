@@ -28,10 +28,15 @@ theme:
 
 nav:
   - Home: index.md
+  - Abstract: abstract.md
   - Introduction: introduction.md
   - Methods:
       - Overview: methods.md
+      - Bisection: methods.md#bisection-method
+      - Newton–Raphson: methods.md#newton-raphson-method
+      - Secant: methods.md#secant-method
   - Results: results.md
+  - Comparison with MATLAB/Octave: comparison.md
   - Applications: applications.md
   - Conclusion: conclusion.md
   - References: references.md
