@@ -1,6 +1,6 @@
 site_name: Math 221 - Numerical Analysis Project
 site_description: Bisection, Newton-Raphson, and Secant methods with results and applications
-site_url: https://shoug-alomran.github.io/Math221_Project/
+site_url: https://shoug-alomran.github.io/Math221_Numerical-Analysis/
 
 theme:
   name: material
