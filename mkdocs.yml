@@ -1,14 +1,14 @@
 site_name: Math 221 - Numerical Analysis Project
-site_description: Bisection, Newton-Raphson, and Secant methods with results and applications
+site_description: Bisection, Newton–Raphson, and Secant methods with results and applications
 site_url: https://shoug-alomran.github.io/Math221_Numerical-Analysis/
 
 theme:
   name: material
   language: en
   features:
-    - navigation.top
-    - navigation.sections
-    - content.code.copy
+    - navigation.top          # keep top tabs
+    - content.code.copy       # copy button on code blocks
+    - navigation.tracking     # highlight active section in sidebar
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -50,4 +50,5 @@ markdown_extensions:
   - md_in_html
 
 extra_javascript:
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
