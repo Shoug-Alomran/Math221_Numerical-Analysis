@@ -53,11 +53,6 @@ Root found at x = 2.000000 after 5 iterations
 
 The figures below illustrate the computational results and graphical output obtained in **GNU Octave** for the three numerical methods.
 
-### Figure 1: Code Output
-![Figure 1: Code Output](img/Code%20Output.png){ width="800" }
-
-*Figure 1: Terminal output displaying computed iterations and convergence results.*
-
 ### Figure 2: Graph Output
 ![Figure 2: Graph Output](img/Graph%20Output.png){ width="800" }
 
