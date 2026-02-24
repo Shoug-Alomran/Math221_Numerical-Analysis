@@ -1,0 +1,629 @@
+/* =========================
+   THEME TOKENS (CS330 BLUE)
+   ========================= */
+:root{
+  --brand-1:#1e3a8a;      /* blue */
+  --brand-2:#2563eb;      /* bright blue */
+  --brand-dark-1:#020617; /* slate dark */
+  --brand-dark-2:#0f172a; /* slate dark */
+}
+
+/* =========================
+   TOP HEADER & TABS
+========================= */
+
+.md-header {
+  background: linear-gradient(90deg, #0f172a, #1e3a8a) !important;
+  color: #fff !important;
+}
+
+.md-tabs {
+  background: linear-gradient(90deg, #0f172a, #1e3a8a) !important;
+}
+
+.md-header__inner,
+.md-tabs__inner {
+  background: transparent !important;
+}
+
+[data-md-color-scheme="default"] .md-header,
+[data-md-color-scheme="default"] .md-tabs {
+  background: linear-gradient(90deg, #1e3a8a, #2563eb) !important;
+}
+
+[data-md-color-scheme="slate"] .md-header,
+[data-md-color-scheme="slate"] .md-tabs {
+  background: linear-gradient(90deg, #020617, #0f172a) !important;
+}
+
+/* Header icons & search */
+.md-search__form,
+.md-search__input,
+.md-search__icon,
+.md-header__option {
+  background-color: transparent !important;
+  color: #fff !important;
+}
+
+.md-tabs__link:hover {
+  background-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+/* =========================
+   LEFT SIDEBAR (PRIMARY NAV)
+========================= */
+
+/* Container spacing */
+.md-nav--primary {
+  padding-top: 12px;
+}
+
+/* Section title wrapper reset */
+.md-nav--primary .md-nav__item > .md-nav__title {
+  background: transparent !important;
+  padding: 0 !important;
+  margin: 0 0 8px 0 !important;
+}
+
+/* RESET: ensure normal links are not gradient pills */
+.md-nav--primary .md-nav__link {
+  background: transparent !important;
+  color: inherit !important;
+  font-weight: 400 !important;
+  border-radius: 8px;
+  padding: 6px 10px;
+}
+
+/* Sidebar links hover */
+.md-nav--primary .md-nav__link:hover {
+  background-color: rgba(37, 99, 235, 0.10);
+}
+
+/* ACTIVE PAGE (e.g., Overview) highlight — NOT gradient */
+.md-nav--primary .md-nav__link--active {
+  background-color: rgba(37, 99, 235, 0.16) !important;
+  color: #1e3a8a !important;
+  font-weight: 700 !important;
+}
+
+/* SECTION TITLE ONLY (e.g., Project, Phase I) */
+.md-nav--primary .md-nav__item--section > .md-nav__link,
+.md-nav--primary .md-nav__item--section > .md-nav__title,
+.md-nav--primary .md-nav__item--section > .md-nav__title .md-nav__button {
+  display: inline-flex !important;
+  align-items: center !important;
+  width: fit-content !important;
+
+  background: linear-gradient(90deg, #0f172a 0%, #1e3a8a 60%, #2563eb 100%) !important;
+  color: #fff !important;
+
+  border-radius: 12px !important;
+  padding: 8px 12px !important;
+  margin: 0 0 10px 0 !important;
+
+  font-weight: 700 !important;
+  letter-spacing: 0.2px !important;
+}
+
+/* Light mode sidebar section title */
+[data-md-color-scheme="default"] .md-nav--primary .md-nav__item--section > .md-nav__link,
+[data-md-color-scheme="default"] .md-nav--primary .md-nav__item--section > .md-nav__title,
+[data-md-color-scheme="default"] .md-nav--primary .md-nav__item--section > .md-nav__title .md-nav__button {
+  background: linear-gradient(90deg, #1e3a8a, #2563eb) !important;
+}
+
+/* Dark mode sidebar section title */
+[data-md-color-scheme="slate"] .md-nav--primary .md-nav__item--section > .md-nav__link,
+[data-md-color-scheme="slate"] .md-nav--primary .md-nav__item--section > .md-nav__title,
+[data-md-color-scheme="slate"] .md-nav--primary .md-nav__item--section > .md-nav__title .md-nav__button {
+  background: linear-gradient(90deg, #020617 0%, #0f172a 70%, #1e3a8a) !important;
+}
+
+/* Dark mode active link */
+[data-md-color-scheme="slate"] .md-nav--primary .md-nav__link--active {
+  background-color: rgba(96, 165, 250, 0.22) !important;
+  color: #e2e8f0 !important;
+}
+
+/* =========================
+   RIGHT SIDEBAR (TOC)
+========================= */
+
+.md-nav--secondary {
+  padding-top: 12px;
+}
+
+/* TOC title as boxed gradient */
+.md-nav--secondary .md-nav__title {
+  background: linear-gradient(90deg, #0f172a 0%, #1e3a8a 60%, #2563eb 100%) !important;
+  color: #fff !important;
+
+  border-radius: 10px;
+  padding: 10px 12px !important;
+  margin: 0 0 10px 0 !important;
+
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+/* TOC links */
+.md-nav--secondary .md-nav__link {
+  border-radius: 8px;
+  padding: 6px 10px;
+}
+
+/* TOC hover */
+.md-nav--secondary .md-nav__link:hover {
+  background-color: rgba(37, 99, 235, 0.10);
+}
+
+/* TOC active */
+.md-nav--secondary .md-nav__link--active {
+  background-color: rgba(37, 99, 235, 0.18) !important;
+  color: #1e3a8a !important;
+  font-weight: 700;
+}
+
+.md-nav--secondary .md-nav__link--active * {
+  color: inherit !important;
+}
+
+/* Dark mode TOC */
+[data-md-color-scheme="slate"] .md-nav--secondary .md-nav__title {
+  background: linear-gradient(90deg, #020617 0%, #0f172a 70%, #1e3a8a) !important;
+}
+
+[data-md-color-scheme="slate"] .md-nav--secondary .md-nav__link:hover {
+  background-color: rgba(96, 165, 250, 0.12);
+}
+
+[data-md-color-scheme="slate"] .md-nav--secondary .md-nav__link--active {
+  background-color: rgba(96, 165, 250, 0.22) !important;
+  color: #e2e8f0 !important;
+}
+
+/* =========================
+   CUSTOM FOOTER (MATCH HEADER GRADIENT)
+   - Light: same as header/tabs light gradient
+   - Dark: same as header/tabs dark gradient
+========================= */
+
+.custom-footer {
+  padding: 56px 16px !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.12) !important;
+  color: #fff !important;
+}
+
+/* Light mode footer gradient = header light */
+[data-md-color-scheme="default"] .custom-footer {
+  background: linear-gradient(90deg, #1e3a8a, #2563eb) !important;
+}
+
+/* Dark mode footer gradient = header dark */
+[data-md-color-scheme="slate"] .custom-footer {
+  background: linear-gradient(90deg, #020617, #0f172a) !important;
+}
+
+/* Footer layout */
+.custom-footer__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: 32px;
+  grid-template-columns: 1.2fr 1fr;
+}
+
+@media (max-width: 900px) {
+  .custom-footer__inner { grid-template-columns: 1fr; }
+}
+
+/* Text */
+.custom-footer__brand {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  opacity: 0.95;
+  margin-bottom: 10px;
+}
+
+.custom-footer__title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+
+.custom-footer__note {
+  margin-top: 14px;
+  font-size: 0.9rem;
+  opacity: 0.85;
+  max-width: 520px;
+}
+
+/* Form pill */
+.custom-footer__form {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  max-width: 520px;
+
+  background: rgba(255, 255, 255, 0.12) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  border-radius: 999px;
+  padding: 10px;
+}
+
+.custom-footer__input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #fff;
+  padding: 10px 14px;
+  font-size: 1rem;
+}
+
+.custom-footer__input::placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* Button */
+.custom-footer__button {
+  border: none;
+  cursor: pointer;
+  border-radius: 999px;
+  padding: 10px 16px;
+  font-weight: 800;
+
+  background: rgba(255, 255, 255, 0.90);
+  color: #0f172a;
+}
+
+.custom-footer__button:hover {
+  opacity: 0.92;
+}
+
+/* Right columns (base) */
+.custom-footer__right {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 26px;
+}
+
+@media (max-width: 900px) {
+  .custom-footer__right { grid-template-columns: 1fr; }
+}
+
+.footer-col__title {
+  font-weight: 900;
+  margin-bottom: 10px;
+  font-size: 1.05rem;
+}
+
+.footer-link {
+  display: block;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  padding: 6px 0;
+}
+
+.footer-link:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* =======================================================
+   FIX: FOOTER'S FOOTER (md-footer-meta) MATCHES CUSTOM FOOTER
+   + Make footer columns 4-col layout
+   ======================================================= */
+
+/* 1) Footer right side must be 4 columns */
+.custom-footer__right {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 26px !important;
+}
+
+@media (max-width: 1100px) {
+  .custom-footer__right {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .custom-footer__right {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* 2) Make the bottom bar (Material footer meta) match the footer gradient */
+.md-footer-meta {
+  border-top: 0 !important;
+}
+
+/* Light mode: same as your header/footer light gradient */
+[data-md-color-scheme="default"] .md-footer-meta {
+  background: linear-gradient(90deg, #1e3a8a, #2563eb) !important;
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* Dark mode: same as your header/footer dark gradient */
+[data-md-color-scheme="slate"] .md-footer-meta {
+  background: linear-gradient(90deg, #020617, #0f172a) !important;
+  color: rgba(255, 255, 255, 0.80) !important;
+}
+
+/* Ensure all text/links/icons inside inherit the bar color */
+[data-md-color-scheme="default"] .md-footer-meta,
+[data-md-color-scheme="default"] .md-footer-meta * {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+[data-md-color-scheme="slate"] .md-footer-meta,
+[data-md-color-scheme="slate"] .md-footer-meta * {
+  color: rgba(255, 255, 255, 0.80) !important;
+}
+
+/* Optional: remove any inner background so it doesn't "fight" the gradient */
+.md-footer-meta__inner {
+  background: transparent !important;
+}
+
+/* =========================
+   HOME HERO PLACEHOLDER
+   (fixed: uses site blue tokens)
+   ========================= */
+.home-hero__placeholder {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--brand-1), var(--brand-2));
+  color: #fff;
+  font-size: 2.8rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.22);
+}
+/* ===== Project cards: layout fixes ===== */
+
+.proj-grid{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 10px;
+}
+
+@media (max-width: 900px){
+  .proj-grid{ grid-template-columns: 1fr; }
+}
+
+.proj-feature{
+  border: 1px solid rgba(37, 99, 235, 0.12);
+  border-radius: 16px;
+  padding: 14px 14px;
+  background: rgba(255,255,255,0.02);
+}
+
+[data-md-color-scheme="slate"] .proj-feature{
+  border-color: rgba(96, 165, 250, 0.18);
+  background: rgba(255,255,255,0.03);
+}
+
+.proj-feature__head{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.proj-feature__title{
+  font-weight: 900;
+  line-height: 1.15;
+}
+
+/* This class is applied via :material-...:{ .proj-feature__icon } */
+.proj-feature__icon{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: rgba(37, 99, 235, 0.10);
+  border: 1px solid rgba(37, 99, 235, 0.16);
+  flex: 0 0 auto;
+}
+
+/* Ensure the SVG inside the icon is sized nicely */
+.proj-feature__icon svg{
+  width: 18px;
+  height: 18px;
+}
+
+[data-md-color-scheme="slate"] .proj-feature__icon{
+  background: rgba(96, 165, 250, 0.12);
+  border-color: rgba(96, 165, 250, 0.22);
+}
+
+.proj-feature__desc{
+  margin: 0;
+  opacity: .92;
+}
+/* =========================
+   PROJECT OVERVIEW CARDS
+   ========================= */
+
+.proj-card{
+  border: 1px solid rgba(37, 99, 235, 0.16);
+  background: rgba(37, 99, 235, 0.06);
+  border-radius: 18px;
+  padding: 22px;
+  margin: 0 0 18px 0;
+}
+
+[data-md-color-scheme="slate"] .proj-card{
+  border-color: rgba(96, 165, 250, 0.22);
+  background: rgba(96, 165, 250, 0.08);
+}
+
+.proj-kicker{
+  margin: 0 0 10px 0;
+  font-weight: 800;
+  opacity: 0.85;
+  letter-spacing: .02em;
+}
+
+.proj-title{
+  margin: 0 0 10px 0;
+  line-height: 1.08;
+}
+
+.proj-lead{
+  margin: 0 0 14px 0;
+  max-width: 80ch;
+  opacity: .92;
+}
+
+.proj-chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap: 8px;
+  margin: 0 0 14px 0;
+}
+
+.proj-chip{
+  display:inline-flex;
+  align-items:center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: .9rem;
+  border: 1px solid rgba(37, 99, 235, 0.18);
+  background: rgba(37, 99, 235, 0.08);
+}
+
+.proj-actions{
+  display:flex;
+  gap: 10px;
+  flex-wrap:wrap;
+  margin-top: 6px;
+}
+
+.proj-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-weight: 800;
+  text-decoration:none !important;
+  border: 1px solid rgba(37, 99, 235, 0.28);
+}
+
+.proj-btn--primary{
+  background: linear-gradient(90deg, #1e3a8a, #2563eb);
+  color: #fff !important;
+  border-color: transparent;
+}
+
+.proj-btn--ghost{
+  background: transparent;
+}
+
+.proj-grid{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 10px;
+}
+
+@media (max-width: 900px){
+  .proj-grid{ grid-template-columns: 1fr; }
+}
+
+.proj-feature{
+  border: 1px solid rgba(37, 99, 235, 0.12);
+  border-radius: 16px;
+  padding: 14px 14px;
+  background: rgba(255,255,255,0.02);
+}
+
+[data-md-color-scheme="slate"] .proj-feature{
+  border-color: rgba(96, 165, 250, 0.18);
+  background: rgba(255,255,255,0.03);
+}
+
+.proj-feature__head{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  margin-bottom: 8px;
+  font-weight: 900;
+}
+
+.proj-feature__icon{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: rgba(37, 99, 235, 0.10);
+  border: 1px solid rgba(37, 99, 235, 0.16);
+}
+
+[data-md-color-scheme="slate"] .proj-feature__icon{
+  background: rgba(96, 165, 250, 0.12);
+  border-color: rgba(96, 165, 250, 0.22);
+}
+
+.proj-feature__desc{
+  margin: 0;
+  opacity: .92;
+}
+/* =========================
+   HOME HERO (CS330)
+   - Adds the "blue light box" like your red project
+   ========================= */
+
+.home-hero{
+  margin: 0 0 18px 0;
+}
+
+.home-hero__text{
+  border-radius: 18px;
+  padding: 22px 22px;
+  border: 1px solid rgba(37, 99, 235, 0.18);
+
+  /* light blue card */
+  background:
+    radial-gradient(800px 240px at 20% 0%, rgba(37, 99, 235, 0.14), transparent 60%),
+    linear-gradient(180deg, rgba(37, 99, 235, 0.08), rgba(37, 99, 235, 0.04));
+
+  box-shadow: 0 12px 30px rgba(2, 6, 23, 0.06);
+}
+
+/* Better spacing/typography inside the hero */
+.home-hero__text h1{
+  margin-top: 0 !important;
+}
+
+.home-hero__text p{
+  max-width: 90ch;
+}
+
+/* Buttons look like a "pair" */
+.home-hero__text .md-button{
+  margin-right: 10px;
+  margin-top: 6px;
+}
+
+/* Dark mode version */
+[data-md-color-scheme="slate"] .home-hero__text{
+  border: 1px solid rgba(96, 165, 250, 0.22);
+  background:
+    radial-gradient(800px 240px at 20% 0%, rgba(96, 165, 250, 0.14), transparent 60%),
+    linear-gradient(180deg, rgba(96, 165, 250, 0.10), rgba(15, 23, 42, 0.35));
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+}

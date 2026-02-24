@@ -53,6 +53,8 @@
       
     
     
+      <link rel="stylesheet" href="../styles/extra.css">
+    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -92,7 +94,7 @@
 
   
 
-<header class="md-header md-header--shadow" data-md-component="header">
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="Math 221 - Numerical Analysis Project" class="md-header__button md-logo" aria-label="Math 221 - Numerical Analysis Project" data-md-component="logo">
       
@@ -171,11 +173,18 @@
       </label>
       <nav class="md-search__options" aria-label="Search">
         
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
       </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
       
     </form>
     <div class="md-search__output">
@@ -195,13 +204,217 @@
     
   </nav>
   
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../abstract/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Abstract
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../introduction/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Introduction
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../methods/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Methods
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../results/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Results
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Comparison of Methods
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../applications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Applications
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../conclusion/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Conclusion
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../references/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  References
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../report/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Report
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
-        
-          
         
       
       <main class="md-main" data-md-component="main">
@@ -215,8 +428,10 @@
                     
 
 
+  
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="Math 221 - Numerical Analysis Project" class="md-nav__button md-logo" aria-label="Math 221 - Numerical Analysis Project" data-md-component="logo">
       
@@ -580,9 +795,34 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../report/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../report/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -596,7 +836,59 @@
   
   
 
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10" id="__nav_10_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Report
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../report/PDF-Report.pdf" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    None
+  
+
+    
+  </span>
+  
+  
+
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -693,6 +985,14 @@
           
             <div class="md-content" data-md-component="content">
               
+                
+
+
+
+  
+
+
+              
               <article class="md-content__inner md-typeset">
                 
                   
@@ -701,36 +1001,36 @@
 
 <h1 id="comparison-of-methods">Comparison of Methods<a class="headerlink" href="#comparison-of-methods" title="Permanent link">&para;</a></h1>
 <p>This section compares the three numerical methods used in this project — <strong>Bisection</strong>, <strong>Newton–Raphson</strong>, and <strong>Secant</strong> — based on how they find the root, their rate of convergence, and overall behavior.<br />
-Although all three methods aim to solve <span class="arithmatex">\( f(x) = 0 \)</span>, they differ in how the next value <span class="arithmatex">\( x_{i+1} \)</span> is calculated from previous iterations.</p>
+Although all three methods aim to solve ( f(x) = 0 ), they differ in how the next value ( x_{i+1} ) is calculated from previous iterations.</p>
 <hr />
 <h2 id="51-bisection-method">5.1 Bisection Method<a class="headerlink" href="#51-bisection-method" title="Permanent link">&para;</a></h2>
 <ul>
-<li>The <strong>Bisection Method</strong> starts with two values <span class="arithmatex">\( a \)</span> and <span class="arithmatex">\( b \)</span> such that <span class="arithmatex">\( f(a) \times f(b) &lt; 0 \)</span>.  </li>
+<li>The <strong>Bisection Method</strong> starts with two values ( a ) and ( b ) such that ( f(a) \times f(b) &lt; 0 ).  </li>
 <li>The midpoint is found by:<br />
   $$
   x_{i+1} = \frac{a + b}{2}
   $$  </li>
-<li>The new interval is then selected based on the sign of <span class="arithmatex">\( f(x_{i+1}) \)</span>.  </li>
-<li>This process repeats until the difference between <span class="arithmatex">\( a \)</span> and <span class="arithmatex">\( b \)</span> becomes very small.</li>
+<li>The new interval is then selected based on the sign of ( f(x_{i+1}) ).  </li>
+<li>This process repeats until the difference between ( a ) and ( b ) becomes very small.</li>
 </ul>
 <p><strong>Main Points:</strong><br />
-- Converges <strong>slowly but always works</strong> if <span class="arithmatex">\( f(a)f(b) &lt; 0 \)</span>.<br />
+- Converges <strong>slowly but always works</strong> if ( f(a)f(b) &lt; 0 ).<br />
 - Does <strong>not need derivatives</strong>.<br />
 - Each step cuts the interval in half.</p>
 <hr />
 <h2 id="52-newtonraphson-method">5.2 Newton–Raphson Method<a class="headerlink" href="#52-newtonraphson-method" title="Permanent link">&para;</a></h2>
 <ul>
 <li>The <strong>Newton–Raphson Method</strong> uses the tangent line to find where the function crosses the x-axis.  </li>
-<li>Starting from an initial guess <span class="arithmatex">\( x_0 \)</span>, it applies the formula:<br />
+<li>Starting from an initial guess ( x_0 ), it applies the formula:<br />
   $$
   x_{i+1} = x_i - \frac{f(x_i)}{f'(x_i)}
   $$  </li>
-<li>The next value <span class="arithmatex">\( x_{i+1} \)</span> is where the tangent line at <span class="arithmatex">\( (x_i, f(x_i)) \)</span> meets the x-axis.</li>
+<li>The next value ( x_{i+1} ) is where the tangent line at ( (x_i, f(x_i)) ) meets the x-axis.</li>
 </ul>
 <p><strong>Main Points:</strong><br />
 - <strong>Very fast</strong> convergence if the first guess is close to the actual root.<br />
-- Needs the <strong>first derivative</strong> <span class="arithmatex">\( f'(x) \)</span>.<br />
-- Might <strong>diverge</strong> if <span class="arithmatex">\( f'(x_i) = 0 \)</span> or if the first guess is poor.</p>
+- Needs the <strong>first derivative</strong> ( f'(x) ).<br />
+- Might <strong>diverge</strong> if ( f'(x_i) = 0 ) or if the first guess is poor.</p>
 <hr />
 <h2 id="53-secant-method">5.3 Secant Method<a class="headerlink" href="#53-secant-method" title="Permanent link">&para;</a></h2>
 <ul>
@@ -739,12 +1039,12 @@ Although all three methods aim to solve <span class="arithmatex">\( f(x) = 0 \)<
   $$
   x_{i+1} = x_i - f(x_i) \frac{x_i - x_{i-1}}{f(x_i) - f(x_{i-1})}
   $$  </li>
-<li>It uses the slope of the secant line between <span class="arithmatex">\( (x_{i-1}, f(x_{i-1})) \)</span> and <span class="arithmatex">\( (x_i, f(x_i)) \)</span>.</li>
+<li>It uses the slope of the secant line between ( (x_{i-1}, f(x_{i-1})) ) and ( (x_i, f(x_i)) ).</li>
 </ul>
 <p><strong>Main Points:</strong><br />
 - <strong>Faster</strong> than Bisection but a bit <strong>slower</strong> than Newton–Raphson.<br />
 - <strong>No derivative</strong> is required.<br />
-- Can fail if <span class="arithmatex">\( f(x_i) \)</span> and <span class="arithmatex">\( f(x_{i-1}) \)</span> are nearly the same.</p>
+- Can fail if ( f(x_i) ) and ( f(x_{i-1}) ) are nearly the same.</p>
 <hr />
 <h2 id="54-summary-of-comparison">5.4 Summary of Comparison<a class="headerlink" href="#54-summary-of-comparison" title="Permanent link">&para;</a></h2>
 <table>
@@ -765,15 +1065,15 @@ Although all three methods aim to solve <span class="arithmatex">\( f(x) = 0 \)<
 </tr>
 <tr>
 <td><strong>Initial Guesses</strong></td>
-<td>Two points <span class="arithmatex">\( a, b \)</span></td>
-<td>One point <span class="arithmatex">\( x_0 \)</span></td>
-<td>Two points <span class="arithmatex">\( x_0, x_1 \)</span></td>
+<td>Two points ( a, b )</td>
+<td>One point ( x_0 )</td>
+<td>Two points ( x_0, x_1 )</td>
 </tr>
 <tr>
 <td><strong>Formula</strong></td>
-<td><span class="arithmatex">\( x_{i+1} = \frac{a + b}{2} \)</span></td>
-<td><span class="arithmatex">\( x_{i+1} = x_i - \frac{f(x_i)}{f'(x_i)} \)</span></td>
-<td><span class="arithmatex">\( x_{i+1} = x_i - f(x_i) \frac{x_i - x_{i-1}}{f(x_i) - f(x_{i-1})} \)</span></td>
+<td>( x_{i+1} = \frac{a + b}{2} )</td>
+<td>( x_{i+1} = x_i - \frac{f(x_i)}{f'(x_i)} )</td>
+<td>( x_{i+1} = x_i - f(x_i) \frac{x_i - x_{i-1}}{f(x_i) - f(x_{i-1})} )</td>
 </tr>
 <tr>
 <td><strong>Convergence Speed</strong></td>
@@ -837,6 +1137,10 @@ Although all three methods aim to solve <span class="arithmatex">\( f(x) = 0 \)<
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
   
+    <div class="md-copyright__highlight">
+      © 2026 Shoug Fawaz Alomran · All rights reserved
+    </div>
+  
   
     Made with
     <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
@@ -858,7 +1162,7 @@ Although all three methods aim to solve <span class="arithmatex">\( f(x) = 0 \)<
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.top", "content.code.copy", "navigation.tracking"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.top", "navigation.path", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
@@ -866,6 +1170,8 @@ Although all three methods aim to solve <span class="arithmatex">\( f(x) = 0 \)<
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../javascripts/cta-footer.js"></script>
       
     
   </body>
