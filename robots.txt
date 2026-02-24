@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://SUBDOMAIN.shoug-tech.com/sitemap.xml
+Sitemap: https://numerical-analysis.shoug-tech.com/sitemap.xml
