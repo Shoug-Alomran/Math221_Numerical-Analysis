@@ -1,7 +1,7 @@
 # Math 221 — Numerical Analysis Project  
 
 ### Prince Sultan University  
-**Course:** Math 221 — Numerical Analysis  
+**Course:** Math 221: Numerical Analysis  
 **Instructor:** Dr. Nahid Fatima  
 **Submission Date:** 16 November 2025  
 
@@ -36,6 +36,7 @@ The **Newton–Raphson Method** converged the fastest, followed by **Secant**, w
 ---
 
 ## Objectives  
+
 1. Apply and compare classical numerical root-finding methods.  
 2. Study their convergence rate, accuracy, and computational efficiency.  
 3. Display results through tables and graphs.  
@@ -67,7 +68,8 @@ The **Newton–Raphson Method** was the fastest, confirming the theory discussed
 
 ## Applications  
 
-Numerical root-finding methods are widely used in:  
+Numerical root-finding methods are widely used in: 
+
 - Engineering and physics modeling  
 - Optimization and computer algorithms  
 - Financial and economic calculations  
@@ -76,6 +78,7 @@ Numerical root-finding methods are widely used in:
 ---
 
 ## Tools Used  
+
 - **GNU Octave 10.3.0** (compatible with MATLAB)  
 - **Visual Studio Code / macOS Terminal**  
 - **MkDocs Material** for creating this digital report  
