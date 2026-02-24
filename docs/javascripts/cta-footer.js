@@ -1,5 +1,6 @@
 (function () {
   const EMAIL = "inquiry@shoug-tech.com";
+  const MAIN_WEBSITE = "https://shoug-tech.com/";
 
   // Normalize: remove trailing slash except for "/"
   function stripTrailingSlash(p) {
@@ -15,7 +16,7 @@
         const b = __md_get("__base") || "";
         return stripTrailingSlash(b);
       }
-    } catch (e) {}
+    } catch (e) { }
 
     // 2) Most reliable: use the header logo link (points to site root)
     const logo = document.querySelector('a.md-header__button.md-logo, a.md-header__button[href]');
@@ -24,7 +25,7 @@
       try {
         const u = new URL(href, window.location.href);
         return stripTrailingSlash(u.pathname);
-      } catch (e) {}
+      } catch (e) { }
     }
 
     // 3) Fallback: try to infer from pathname (repo root is first segment)
@@ -126,13 +127,19 @@
             <a class="footer-link" href="${url("report/")}">Report page</a>
             <a class="footer-link" href="${url("report/PDF-Report.pdf")}">PDF Report</a>
           </div>
-
+<div class="footer-col">
+  <div class="footer-col__title">Website</div>
+  <a class="footer-link" href="${MAIN_WEBSITE}" target="_blank" rel="noopener">
+    shoug-tech.com
+  </a>
+</div>
           <div class="footer-col">
             <div class="footer-col__title">Contact</div>
             <a class="footer-link" href="mailto:${EMAIL}">${EMAIL}</a>
           </div>
         </div>
       </div>
+      
     `;
 
     // Insert above default Material footer meta
