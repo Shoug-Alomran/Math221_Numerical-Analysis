@@ -1,6 +1,6 @@
 # Math 221 – Numerical Analysis Project
 
-**Live Website:** **[https://shoug-alomran.github.io/Math221_Numerical-Analysis/](https://shoug-alomran.github.io/Math221_Numerical-Analysis/)**
+**Live Website:** **[https://numerical-analysis.shoug-tech.com/](https://numerical-analysis.shoug-tech.com/)**
 
 This repository contains the **Numerical Analysis (Math 221)** course project, which implements and compares three numerical methods for solving nonlinear equations: **Bisection**, **Newton–Raphson**, and **Secant**.
 

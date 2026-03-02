@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math 221: Numerical Analysis - Chapter 2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .header h2 {
+            font-size: 1.5em;
+            font-weight: 300;
+            margin-bottom: 30px;
+        }
+
+        .header-info {
+            margin-top: 20px;
+            font-size: 0.95em;
+        }
+
+        .header-info p {
+            margin: 5px 0;
+        }
+
+        .contributors {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .contributors p {
+            margin: 8px 0;
+            font-size: 0.9em;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .toc {
+            background-color: #f8fafc;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .toc h3 {
+            color: #1e3a8a;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .toc ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .toc li {
+            padding: 8px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .toc li:last-child {
+            border-bottom: none;
+        }
+
+        .toc a {
+            color: #3b82f6;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .toc a:hover {
+            color: #1e3a8a;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            color: #1e3a8a;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #3b82f6;
+        }
+
+        .section h3 {
+            color: #1e40af;
+            font-size: 1.3em;
+            margin: 25px 0 15px 0;
+        }
+
+        .section p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .equation {
+            background-color: #f1f5f9;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+            text-align: center;
+            font-family: 'Courier New', monospace;
+            font-size: 1.1em;
+        }
+
+        .method-box {
+            background-color: #fef3c7;
+            border: 2px solid #fbbf24;
+            border-radius: 8px;
+            padding: 30px;
+            margin: 25px 0;
+            min-height: 200px;
+        }
+
+        .method-box h4 {
+            color: #92400e;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .placeholder-text {
+            color: #78716c;
+            font-style: italic;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 1.05em;
+        }
+
+        .figure {
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .figure img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .figure-caption {
+            margin-top: 15px;
+            font-style: italic;
+            color: #64748b;
+            font-size: 0.95em;
+        }
+
+        .applications {
+            background-color: #f0f9ff;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #0ea5e9;
+        }
+
+        .applications ol {
+            margin-left: 20px;
+            margin-top: 15px;
+        }
+
+        .applications li {
+            margin-bottom: 15px;
+        }
+
+        .applications strong {
+            color: #0c4a6e;
+        }
+
+        .conclusion {
+            background-color: #f0fdf4;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #10b981;
+        }
+
+        .references {
+            background-color: #fafafa;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+
+        .references h2 {
+            border-bottom: 3px solid #64748b;
+        }
+
+        .references ol {
+            margin-left: 20px;
+            margin-top: 15px;
+        }
+
+        .references li {
+            margin-bottom: 12px;
+            line-height: 1.7;
+        }
+
+        .references a {
+            color: #3b82f6;
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        .references a:hover {
+            text-decoration: underline;
+        }
+
+        ul.bullet-list {
+            margin-left: 30px;
+            margin-top: 10px;
+        }
+
+        ul.bullet-list li {
+            margin-bottom: 10px;
+        }
+
+        @media print {
+            body {
+                background-color: white;
+            }
+
+            .container {
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Math 221: Numerical Analysis</h1>
+            <h2>Chapter 2 - 2.1, 2.2, 2.3</h2>
+
+            <div class="header-info">
+                <p><strong>Course Instructor:</strong> Nahid Fatima</p>
+                <p><strong>Section #:</strong> 1429</p>
+            </div>
+
+            <div class="contributors">
+                <p><strong>Project Contributors:</strong></p>
+                <p>SHOUG ALOMRAN 223410392</p>
+                <p>SHAHAD ABUNAYAN 223410189</p>
+                <p>MANAR ALTUWAIM 220410529</p>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="toc">
+                <h3>Table of Contents</h3>
+                <ul>
+                    <li><a href="#abstract">Abstract</a></li>
+                    <li><a href="#introduction">Introduction</a></li>
+                    <li><a href="#solving">Solving the Problem (3 Methods)</a></li>
+                    <li><a href="#comparison">Comparison with MATLAB/Octave</a></li>
+                    <li><a href="#applications">Applications in Computer Science and Engineering</a></li>
+                    <li><a href="#conclusion">Conclusion</a></li>
+                    <li><a href="#references">References</a></li>
+                </ul>
+            </div>
+
+            <div class="section" id="abstract">
+                <h2>Abstract</h2>
+                <p>The present project will study three numerical techniques, namely Bisection, Newton–Raphson, and
+                    Secant Methods, for the solution of nonlinear equations. These three methods have become
+                    indispensable tools in computational mathematics since many nonlinear equations do not lend
+                    themselves to analytical solutions due to complexity or/and impossibility. Their convergence rate,
+                    accuracy, and computational efficiency are compared via MATLAB implementation. The Bisection method
+                    ensures convergence but with very slow performance, whereas the Newton–Raphson method converges
+                    rapidly when derivatives are known and an initial guess is close to the root. The Secant method
+                    offers a compromise of both, needing no derivative but depending on two initial guesses. The results
+                    presented demonstrate a balance between the reliability and speed of the numerical root-finding
+                    technique, which is the basis for solving problems in computer science and engineering applications,
+                    including optimization, data modeling, and simulation.</p>
+            </div>
+
+            <div class="section" id="introduction">
+                <h2>Introduction</h2>
+                <p>In many real-world problems in the fields of engineering and computer science, equations arise that
+                    cannot be solved analytically. Be it the simulation of physical systems, the optimization of neural
+                    networks, or simply the modeling of dynamic processes, there are usually demands for numerical
+                    methods that approximate unknown quantities.</p>
+
+                <p>This project focuses on solving nonlinear equations using three classical iterative methods:
+                    Bisection, Newton-Raphson, and Secant. Each of the three methods uses a different way of converging
+                    on a root - that is, the x value where <em>f(x) = 0</em>.</p>
+
+                <ul class="bullet-list">
+                    <li><strong>Bisection method</strong> is a bracketing technique based on the Intermediate Value
+                        Theorem. It repeatedly halves an interval [a, b] where <em>f(a)</em> and <em>f(b)</em> have
+                        opposite signs until a desired accuracy is reached.</li>
+
+                    <li><strong>Newton–Raphson Method.</strong> This is a calculus-based technique that utilizes
+                        derivatives so that the process of convergence may be accelerated. Given an initial guess x₀,
+                        the next approximation is given by:</li>
+                </ul>
+
+                <div class="equation">
+                    x<sub>n+1</sub> = x<sub>n</sub> − <span style="display: inline-block; vertical-align: middle;">
+                        <span
+                            style="display: block; text-align: center; border-bottom: 2px solid #333; padding-bottom: 3px;">f(x)</span>
+                        <span style="display: block; text-align: center; padding-top: 3px;">f'(x)</span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="section" id="solving">
+                <h2>Solving the Problem (3 Methods)</h2>
+
+                <div class="method-box">
+                    <div class="method-box">
+                        <h4>Bisection Method</h4>
+                        <div class="figure">
+                            <img src="../img/Bisection%20Method.png" alt="Bisection Method Handwritten Solution">
+                            <p class="figure-caption">Handwritten solution for the Bisection Method</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="method-box">
+                    <h4>Newton-Raphson Method</h4>
+                    <div class="figure">
+                        <img src="../img/Newton-Raphson%20Method.png" alt="Newton-Raphson Handwritten Solution">
+                        <p class="figure-caption">Handwritten solution for the Newton-Raphson Method</p>
+                    </div>
+                </div>
+
+                <div class="method-box">
+                    <h4>Secant Method</h4>
+                     <div class="figure">
+                        <img src="../img/Secant Method.png" alt="Secant Handwritten Solution">
+                        <p class="figure-caption">Handwritten solution for the Secant Method</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section" id="comparison">
+                <h2>Comparison with MATLAB/Octave</h2>
+                <p>All three methods were implemented and tested using Octave, a MATLAB-compatible environment. The
+                    numerical results from all methods converged to the same root <strong>x = 2.000000</strong> for
+                    <strong>f(x) = x² − 4 = 0</strong>. The consistency between methods and the plotted curve verifies
+                    the correctness of the implementation and highlights the precision of MATLAB's numerical computation
+                    capabilities.
+                </p>
+
+                <div class="figure">
+                    <img src="../img/Code%20Output.png" alt="Numerical Output from Octave">
+                    <p class="figure-caption">Figure 1. Numerical Output from Octave</p>
+                </div>
+
+                <div class="figure">
+                    <img src="../img/Graph%20Output.png" alt="Graph of f(x) = x² − 4">
+                    <p class="figure-caption">Figure 2. Graph of f(x) = x² − 4</p>
+                </div>
+            </div>
+
+            <div class="section" id="applications">
+                <h2>Applications in Computer Science and Engineering</h2>
+
+                <div class="applications">
+                    <p>The significance of numerical root-finding extends much beyond pure mathematics:</p>
+
+                    <ol>
+                        <li>
+                            <strong>Machine Learning and Optimization</strong><br>
+                            Practical optimization algorithms, including gradient descent, are based on principles
+                            similar to Newton–Raphson for minimizing loss functions.
+                        </li>
+
+                        <li>
+                            <strong>Computer Graphics and Simulation</strong><br>
+                            Root-finding methods have many applications, including computing intersections when ray
+                            tracing, solving implicit curves, and approximating the equations of motion in physics
+                            engines.
+                        </li>
+
+                        <li>
+                            <strong>Control Systems and Signal Processing</strong><br>
+                            Engineers tune system parameters, design filters, and estimate the roots of transfer
+                            functions by applying iterative numerical algorithms.
+                        </li>
+
+                        <li>
+                            <strong>Data Modeling and Computational Algorithms</strong><br>
+                            Many algorithms, such as logistic regression, non-linear regression, polynomial fitting,
+                            require the solution of equations numerically when no closed-form solution exists.
+                        </li>
+
+                        <li>
+                            <strong>Software Engineering and Algorithm Design</strong><br>
+                            Numerical methods are part of algorithmic analysis for performance tuning, numerical
+                            stability, and error minimization.
+                        </li>
+                    </ol>
+
+                    <p style="margin-top: 20px;">In all, numerical methods provide an algorithmic backbone for
+                        computational problem-solving, aiding engineers and scientists in translating mathematical
+                        models into executable computer code that can be used to predict, simulate, and optimize
+                        real-world systems.</p>
+                </div>
+            </div>
+
+            <div class="section" id="conclusion">
+                <h2>Conclusion</h2>
+                <div class="conclusion">
+                    <p>This project illustrates how numerical root-finding methods bridge mathematical theory and
+                        computational practice. The Bisection method offers guaranteed convergence but at a very slow
+                        computational time. The Newton–Raphson method rapidly converges, using derivative information
+                        and a good initial guess, while the Secant method often allows for an effective middle ground,
+                        with fast results without derivatives and with sometimes sacrificed stability. Understanding
+                        these various trade-offs will prepare the Computer Science and Engineering student in choosing
+                        and implementing the right algorithm, based on problem constraints, making both accurate and
+                        efficient the computational solution at hand.</p>
+                </div>
+            </div>
+
+            <div class="references" id="references">
+                <h2>References</h2>
+                <ol>
+                    <li>Burden, R. L., & Faires, J. D. (2011). <em>Numerical Analysis</em> (9th ed.). Brooks/Cole.</li>
+
+                    <li>Chapra, S. C., & Canale, R. P. (2015). <em>Numerical Methods for Engineers</em> (7th ed.).
+                        McGraw-Hill Education.</li>
+
+                    <li>Lecture Slides: <em>Math 221 – Chapter 2: Bisection, Fixed Point, Newton–Raphson, and Secant
+                            Methods</em>, Prince Sultan University (2025).</li>
+
+                    <li>MATLAB Documentation: <em>Root Finding – fzero Function</em> (MathWorks, 2025).</li>
+
+                    <li>Alomran, Shoug. <em>Math221_Numerical-Analysis</em> [Source Code]. GitHub, 2025. Available at:
+                        <a href="https://github.com/Shoug-Alomran/Math221_Numerical-Analysis"
+                            target="_blank">https://github.com/Shoug-Alomran/Math221_Numerical-Analysis</a>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

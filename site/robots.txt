@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://numerical-analysis.shoug-tech.com/sitemap.xml
