@@ -1,6 +1,9 @@
 ---
 hide:
   - toc
+robots: noindex, follow
+search:
+  exclude: true
 ---
 
 <div class="home-hero" markdown>

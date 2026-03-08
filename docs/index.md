@@ -87,4 +87,4 @@ Numerical root-finding methods are widely used in:
 ---
 
 ## References  
-See the complete list in the [References](references.md) section.
+See the complete list in the <a href="/references/">References</a> section.

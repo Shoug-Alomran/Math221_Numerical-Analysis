@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /*?q=
+Disallow: /*?query=
+Disallow: /*?search=
 
 Sitemap: https://numerical-analysis.shoug-tech.com/sitemap.xml

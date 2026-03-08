@@ -2,9 +2,15 @@ site_name: Math 221 - Numerical Analysis Project
 site_description: Bisection, Newton–Raphson, and Secant methods with results and applications
 site_url: https://numerical-analysis.shoug-tech.com/
 copyright: © 2026 Shoug Fawaz Alomran · All rights reserved
+use_directory_urls: true
+strict: true
+
+hooks:
+  - hooks/seo.py
 
 theme:
   name: material
+  custom_dir: overrides
   logo: logo.png
   favicon: google.png
   language: en
@@ -18,7 +24,6 @@ theme:
     - toc.follow
     - search.suggest
     - search.highlight
-    - search.share
     - content.code.copy
   palette:
     - media: "(prefers-color-scheme: light)"
@@ -70,3 +75,4 @@ extra_javascript:
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
   - javascripts/cta-footer.js
+  - javascripts/seo.js
