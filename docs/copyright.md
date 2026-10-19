@@ -27,30 +27,35 @@ This protection applies to all materials hosted on this site, including:
 
 <div class="grid cards" markdown>
 
--   :material-code-braces: **Software Projects**
+- :material-code-braces: **Software Projects**
 
-    ---
-    Source implementations, experimental code, and technical solutions.
+  ***
 
--   :material-file-document-outline: **Documentation**
+  Source implementations, experimental code, and technical solutions.
 
-    ---
-    Reports, structured notes, technical explanations, and research writing.
+- :material-file-document-outline: **Documentation**
 
--   :material-palette-outline: **Design & Layout**
+  ***
 
-    ---
-    Visual structure, custom styling, and presentation design.
+  Reports, structured notes, technical explanations, and research writing.
 
--   :material-flask-outline: **Research Content**
+- :material-palette-outline: **Design & Layout**
 
-    ---
-    Analytical findings, experimental results, and methodological documentation.
+  ***
 
--   :material-text: **Written Material**
+  Visual structure, custom styling, and presentation design.
 
-    ---
-    All authored content unless otherwise stated.
+- :material-flask-outline: **Research Content**
+
+  ***
+
+  Analytical findings, experimental results, and methodological documentation.
+
+- :material-text: **Written Material**
+
+  ***
+
+  All authored content unless otherwise stated.
 
 </div>
 
@@ -60,15 +65,17 @@ This protection applies to all materials hosted on this site, including:
 
 <div class="grid cards" markdown>
 
--   :material-eye-outline: **Personal & Educational Viewing**
+- :material-eye-outline: **Personal & Educational Viewing**
 
-    ---
-    Content may be viewed and referenced for non-commercial purposes.
+  ***
 
--   :material-format-quote-close: **Limited Quotation**
+  Content may be viewed and referenced for non-commercial purposes.
 
-    ---
-    Small portions may be quoted with proper attribution to the author.
+- :material-format-quote-close: **Limited Quotation**
+
+  ***
+
+  Small portions may be quoted with proper attribution to the author.
 
 </div>
 
@@ -78,20 +85,23 @@ This protection applies to all materials hosted on this site, including:
 
 <div class="grid cards" markdown>
 
--   :material-content-copy: **Full Reproduction**
+- :material-content-copy: **Full Reproduction**
 
-    ---
-    Redistribution or replication of complete projects without permission.
+  ***
 
--   :material-currency-usd-off: **Commercial Use**
+  Redistribution or replication of complete projects without permission.
 
-    ---
-    Commercial exploitation without written authorization.
+- :material-currency-usd-off: **Commercial Use**
 
--   :material-account-off-outline: **Misrepresentation**
+  ***
 
-    ---
-    Claiming authorship or ownership of this work.
+  Commercial exploitation without written authorization.
+
+- :material-account-off-outline: **Misrepresentation**
+
+  ***
+
+  Claiming authorship or ownership of this work.
 
 </div>
 

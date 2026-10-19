@@ -1,0 +1,149 @@
+{#- Custom header: brand lockup, dropdown navigation built from `nav`, search
+trigger, palette toggle and report CTA. -#} {% set home_url = nav.homepage.url |
+url %}
+<header class="md-header sx-header" data-md-component="header">
+  <div class="sx-progress" aria-hidden="true"><span></span></div>
+  <nav
+    class="md-header__inner md-grid sx-header__inner"
+    aria-label="{{ lang.t('header') }}"
+  >
+    <label
+      class="md-header__button md-icon sx-header__drawer"
+      for="__drawer"
+      aria-label="Open navigation"
+    >
+      {% include ".icons/material/menu.svg" %}
+    </label>
+
+    <a
+      href="{{ home_url }}"
+      class="sx-brand"
+      aria-label="{{ config.site_name | e }}"
+      data-md-component="logo"
+    >
+      <span class="sx-brand__mark">
+        <img
+          src="{{ config.theme.logo | url }}"
+          alt=""
+          width="28"
+          height="28"
+        />
+      </span>
+      <span class="sx-brand__code">MATH221</span>
+      <span class="sx-brand__slash">/</span>
+      <span class="sx-brand__name">f(x)=0</span>
+    </a>
+
+    {#- Material swaps this on scroll; kept for compatibility but visually
+    hidden. -#}
+    <div
+      class="md-header__title sx-visually-hidden"
+      data-md-component="header-title"
+    >
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">{{ config.site_name }}</span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis"
+            >{{ page.meta.title if page.meta and page.meta.title else page.title
+            }}</span
+          >
+        </div>
+      </div>
+    </div>
+
+    <ul class="sx-nav">
+      {%- set singles = [] -%} {%- for item in nav -%} {%- if item.children and
+      item.children | length > 1 -%} {%- elif not (item.is_page and
+      item.is_homepage) -%} {%- set _ = singles.append(item) -%} {%- endif -%}
+      {%- endfor %} {%- if singles %}
+      <li
+        class="sx-nav__item sx-nav__item--menu{% if singles | selectattr('active') | list %} is-active{% endif %}"
+      >
+        <button class="sx-nav__trigger" type="button" aria-haspopup="true">
+          Project
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m6 9 6 6 6-6" />
+          </svg>
+        </button>
+        <div class="sx-menu">
+          {%- for item in singles %} {%- set target = item.children[0] if
+          item.children else item %}
+          <a
+            class="sx-menu__link{% if item.active %} is-active{% endif %}"
+            href="{{ target.url | url }}"
+          >
+            <span class="sx-menu__index"
+              >{{ "%02d" | format(loop.index) }}</span
+            >
+            <span>{{ item.title }}</span>
+          </a>
+          {%- endfor %}
+        </div>
+      </li>
+      {%- endif %} {%- for item in nav if item.children and item.children | length > 1 %} {%-
+      set parts = item.title.split(" - ") %}
+      <li
+        class="sx-nav__item sx-nav__item--menu{% if item.active %} is-active{% endif %}"
+      >
+        <button class="sx-nav__trigger" type="button" aria-haspopup="true">
+          {{ parts[0] }}
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m6 9 6 6 6-6" />
+          </svg>
+        </button>
+        <div class="sx-menu">
+          {%- if parts | length > 1 %}
+          <div class="sx-menu__label">{{ parts[1] }}</div>
+          {%- endif %} {%- for child in item.children if child.url %}
+          <a
+            class="sx-menu__link{% if child.active %} is-active{% endif %}"
+            href="{{ child.url | url }}"
+          >
+            <span class="sx-menu__index"
+              >{{ "%02d" | format(loop.index) }}</span
+            >
+            <span>{{ child.title }}</span>
+          </a>
+          {%- endfor %}
+        </div>
+      </li>
+      {%- endfor %}
+    </ul>
+
+    <div class="sx-header__actions">
+      {% if "material/search" in config.plugins %} {% set search =
+      config.plugins["material/search"] | attr("config") %} {% if search.enabled
+      %}
+      <label class="sx-search-trigger" for="__search" aria-label="Search">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="11" cy="11" r="7" />
+          <path d="m20 20-3.5-3.5" />
+        </svg>
+        <span class="sx-search-trigger__text">Search</span>
+        <kbd>⌘K</kbd>
+      </label>
+      {% include "partials/search.html" %} {% endif %} {% endif %} {% if
+      config.theme.palette and not config.theme.palette is mapping %}
+      <div class="sx-icon-btn sx-palette">
+        {% include "partials/palette.html" %}
+      </div>
+      {% endif %} {% if not config.theme.palette is mapping %} {% include
+      "partials/javascripts/palette.html" %} {% endif %}
+
+      <a
+        class="sx-btn sx-btn--primary sx-btn--sm sx-header__cta"
+        href="{{ 'report/' | url }}"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"
+          />
+          <path d="M14 3v5h5M9 13h6M9 17h6" />
+        </svg>
+        Report
+      </a>
+    </div>
+  </nav>
+</header>

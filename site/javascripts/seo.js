@@ -20,7 +20,9 @@
   }
 
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", stripEmptySearchParams, { once: true });
+    document.addEventListener("DOMContentLoaded", stripEmptySearchParams, {
+      once: true,
+    });
   } else {
     stripEmptySearchParams();
   }

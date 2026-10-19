@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Bisection, Newton–Raphson, and Secant methods with results and applications">
+        <meta name="description" content="Bisection, Newton–Raphson and Secant methods compared on f(x) = x² − 4. Convergence, accuracy and stability, implemented in GNU Octave at Prince Sultan University.">
       
       
       
@@ -17,22 +17,19 @@
         <link rel="next" href="abstract/">
       
       
-        
-      
-      
-      <link rel="icon" href="google.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <link rel="icon" href="img/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.14">
     
     
       
-        <title>Math 221 - Numerical Analysis Project</title>
+        <title>Math 221 — Numerical Analysis Project - Math 221 - Numerical Analysis Project</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.fad675c6.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="assets/stylesheets/palette.356b1318.min.css">
       
       
 
@@ -42,25 +39,54 @@
       
     
     
-      
-        
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-      
-    
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=STIX+Two+Text:ital,wght@0,400;0,500;1,400;1,500&display=swap"
+/>
+
     
       <link rel="stylesheet" href="styles/extra.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
-  
-  
+    
+
+<script>
+  document.documentElement.classList.add("sx-js");
+</script>
+<meta name="theme-color" content="#b45309" />
+<link
+  rel="apple-touch-icon"
+  sizes="180x180"
+  href="img/apple-touch-icon.png"
+/>
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Math 221 - Numerical Analysis Project" />
+<meta
+  property="og:title"
+  content="Math 221 - Numerical Analysis Project"
+/>
+<meta
+  property="og:description"
+  content="Bisection, Newton–Raphson and Secant methods compared on f(x) = x² − 4. Convergence, accuracy and stability, implemented in GNU Octave at Prince Sultan University."
+/>
+<meta property="og:image" content="https://numerical-analysis.shoug-tech.com/logo.png" />
+<meta
+  property="og:image:alt"
+  content="Math 221 — Numerical Analysis Project banner"
+/>
+
+<meta property="og:url" content="https://numerical-analysis.shoug-tech.com/" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://numerical-analysis.shoug-tech.com/logo.png" />
+
 
   </head>
   
@@ -72,8 +98,11 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
   
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -92,90 +121,211 @@
     
     
       
-
-  
-
-<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Math 221 - Numerical Analysis Project" class="md-header__button md-logo" aria-label="Math 221 - Numerical Analysis Project" data-md-component="logo">
-      
-  <img src="logo.png" alt="logo">
-
-    </a>
-    <label class="md-header__button md-icon" for="__drawer">
-      
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+<header class="md-header sx-header" data-md-component="header">
+  <div class="sx-progress" aria-hidden="true"><span></span></div>
+  <nav
+    class="md-header__inner md-grid sx-header__inner"
+    aria-label="Header"
+  >
+    <label
+      class="md-header__button md-icon sx-header__drawer"
+      for="__drawer"
+      aria-label="Open navigation"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
     </label>
-    <div class="md-header__title" data-md-component="header-title">
+
+    <a
+      href="."
+      class="sx-brand"
+      aria-label="Math 221 - Numerical Analysis Project"
+      data-md-component="logo"
+    >
+      <span class="sx-brand__mark">
+        <img
+          src="img/logo-icon.png"
+          alt=""
+          width="28"
+          height="28"
+        />
+      </span>
+      <span class="sx-brand__code">MATH221</span>
+      <span class="sx-brand__slash">/</span>
+      <span class="sx-brand__name">f(x)=0</span>
+    </a><div
+      class="md-header__title sx-visually-hidden"
+      data-md-component="header-title"
+    >
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
-          <span class="md-ellipsis">
-            Math 221 - Numerical Analysis Project
-          </span>
+          <span class="md-ellipsis">Math 221 - Numerical Analysis Project</span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
-          <span class="md-ellipsis">
-            
-              Home
-            
-          </span>
+          <span class="md-ellipsis"
+            >Math 221 — Numerical Analysis Project</span
+          >
         </div>
       </div>
     </div>
-    
-      
-        <form class="md-header__option" data-md-component="palette">
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
-    
-      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+
+    <ul class="sx-nav">
+      <li
+        class="sx-nav__item sx-nav__item--menu"
+      >
+        <button class="sx-nav__trigger" type="button" aria-haspopup="true">
+          Study
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m6 9 6 6 6-6" />
+          </svg>
+        </button>
+        <div class="sx-menu">
+          <div class="sx-menu__label">Background & methods</div>
+          <a
+            class="sx-menu__link"
+            href="abstract/"
+          >
+            <span class="sx-menu__index"
+              >01</span
+            >
+            <span>Abstract</span>
+          </a>
+          <a
+            class="sx-menu__link"
+            href="introduction/"
+          >
+            <span class="sx-menu__index"
+              >02</span
+            >
+            <span>Introduction</span>
+          </a>
+          <a
+            class="sx-menu__link"
+            href="methods/"
+          >
+            <span class="sx-menu__index"
+              >03</span
+            >
+            <span>Methods</span>
+          </a>
+        </div>
+      </li>
+      <li
+        class="sx-nav__item sx-nav__item--menu"
+      >
+        <button class="sx-nav__trigger" type="button" aria-haspopup="true">
+          Findings
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m6 9 6 6 6-6" />
+          </svg>
+        </button>
+        <div class="sx-menu">
+          <div class="sx-menu__label">Results & discussion</div>
+          <a
+            class="sx-menu__link"
+            href="results/"
+          >
+            <span class="sx-menu__index"
+              >01</span
+            >
+            <span>Results</span>
+          </a>
+          <a
+            class="sx-menu__link"
+            href="comparison/"
+          >
+            <span class="sx-menu__index"
+              >02</span
+            >
+            <span>Comparison of Methods</span>
+          </a>
+          <a
+            class="sx-menu__link"
+            href="applications/"
+          >
+            <span class="sx-menu__index"
+              >03</span
+            >
+            <span>Applications</span>
+          </a>
+          <a
+            class="sx-menu__link"
+            href="conclusion/"
+          >
+            <span class="sx-menu__index"
+              >04</span
+            >
+            <span>Conclusion</span>
+          </a>
+          <a
+            class="sx-menu__link"
+            href="references/"
+          >
+            <span class="sx-menu__index"
+              >05</span
+            >
+            <span>References</span>
+          </a>
+        </div>
+      </li>
+      <li
+        class="sx-nav__item sx-nav__item--menu"
+      >
+        <button class="sx-nav__trigger" type="button" aria-haspopup="true">
+          Report
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m6 9 6 6 6-6" />
+          </svg>
+        </button>
+        <div class="sx-menu">
+          <div class="sx-menu__label">Deliverables</div>
+          <a
+            class="sx-menu__link"
+            href="report/"
+          >
+            <span class="sx-menu__index"
+              >01</span
+            >
+            <span>Report</span>
+          </a>
+          <a
+            class="sx-menu__link"
+            href="report/PDF-Report.pdf"
+          >
+            <span class="sx-menu__index"
+              >02</span
+            >
+            <span>PDF report</span>
+          </a>
+        </div>
+      </li>
+    </ul>
+
+    <div class="sx-header__actions">
+        
+      <label class="sx-search-trigger" for="__search" aria-label="Search">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="11" cy="11" r="7" />
+          <path d="m20 20-3.5-3.5" />
+        </svg>
+        <span class="sx-search-trigger__text">Search</span>
+        <kbd>⌘K</kbd>
       </label>
-    
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
-    
-      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m3.55 19.09 1.41 1.41 1.8-1.79-1.42-1.42M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6c0-3.32-2.69-6-6-6m8 7h3v-2h-3m-2.76 7.71 1.8 1.79 1.41-1.41-1.79-1.8M20.45 5l-1.41-1.4-1.8 1.79 1.42 1.42M13 1h-2v3h2M6.76 5.39 4.96 3.6 3.55 5l1.79 1.81zM1 13h3v-2H1m12 9h-2v3h2"/></svg>
-      </label>
-    
-  
-</form>
-      
-    
-    
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
-    
-    
-    
-      
-      
-        <label class="md-header__button md-icon" for="__search">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-        </label>
-        <div class="md-search" data-md-component="search" role="dialog">
+      <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
         
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
       
@@ -183,7 +333,7 @@
       
     </form>
     <div class="md-search__output">
-      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+      <div class="md-search__scrollwrap" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             Initializing search
@@ -193,1116 +343,711 @@
       </div>
     </div>
   </div>
-</div>
-      
+</div>   
+      <div class="sx-icon-btn sx-palette">
+        <form class="md-header__option" data-md-component="palette">
+  
     
     
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m3.55 19.09 1.41 1.41 1.8-1.79-1.42-1.42M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6c0-3.32-2.69-6-6-6m8 7h3v-2h-3m-2.76 7.71 1.8 1.79 1.41-1.41-1.79-1.8M20.45 5l-1.41-1.4-1.8 1.79 1.42 1.42M13 1h-2v3h2M6.76 5.39 4.96 3.6 3.55 5l1.79 1.81 1.42-1.42M1 13h3v-2H1m12 9h-2v3h2"/></svg>
+      </label>
+    
+  
+</form>
+      </div>
+        <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script> 
+
+      <a
+        class="sx-btn sx-btn--primary sx-btn--sm sx-header__cta"
+        href="report/"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"
+          />
+          <path d="M14 3v5h5M9 13h6M9 17h6" />
+        </svg>
+        Report
+      </a>
+    </div>
   </nav>
-  
-    
-      
-<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  
-  
-  
-    
-  
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="." class="md-tabs__link">
-        
-  
-  
-    
-  
-  Home
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="abstract/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Abstract
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="introduction/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Introduction
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="methods/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Methods
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="results/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Results
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="comparison/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Comparison of Methods
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="applications/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Applications
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="conclusion/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Conclusion
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="references/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  References
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="report/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Report
-
-        </a>
-      </li>
-    
-  
-
-      
-    </ul>
-  </div>
-</nav>
-    
-  
 </header>
     
     <div class="md-container" data-md-component="container">
       
-      
-        
+<div class="sx-home">
+  <!-- ============================== HERO ============================== -->
+  <section class="sx-hero">
+    <div class="sx-hero__bg" aria-hidden="true">
+      <div class="sx-hero__glow sx-hero__glow--a"></div>
+      <div class="sx-hero__glow sx-hero__glow--b"></div>
+      <div class="sx-glyphs">
+        <span style="--x: 6%; --y: 18%; --r: -8deg">∫</span>
+        <span style="--x: 44%; --y: 8%; --r: 6deg">∂</span>
+        <span style="--x: 3%; --y: 74%; --r: 4deg">Σ</span>
+        <span style="--x: 52%; --y: 86%; --r: -5deg">∇</span>
+        <span style="--x: 92%; --y: 90%; --r: 10deg">ε</span>
+      </div>
+    </div>
+
+    <div class="sx-hero__inner md-grid">
+      <div class="sx-hero__copy">
+        <a
+          class="sx-badge sx-rise"
+          style="--d: 0"
+          href="introduction/"
+        >
+          <span class="sx-live-dot"></span>
+          Math 221 · Prince Sultan University
+        </a>
+
+        <h1 class="sx-hero__title sx-rise" style="--d: 1">
+          Three ways to solve
+          <span class="sx-hero__eq"
+            ><i>f</i>(<i>x</i>)&thinsp;=&thinsp;0</span
+          >
+        </h1>
+
+        <p class="sx-hero__lead sx-rise" style="--d: 2">
+          Most nonlinear equations have no closed-form answer, so we iterate
+          towards one. This project implements the
+          <strong class="is-m1">Bisection</strong>,
+          <strong class="is-accent">Newton–Raphson</strong> and
+          <strong class="is-m3">Secant</strong> methods in GNU Octave and
+          compares how fast, how accurately and how reliably each one
+          converges on <span class="sx-math">f</span>(<span class="sx-math"
+            >x</span
+          >) = <span class="sx-math">x</span>² − 4.
+        </p>
+
+        <div class="sx-hero__actions sx-rise" style="--d: 3">
+          <a class="sx-btn sx-btn--primary" href="methods/">
+            Explore the methods
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h14m-6-6 6 6-6 6" />
+            </svg>
+          </a>
+          <a class="sx-btn sx-btn--ghost" href="report/">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"
+              />
+              <path d="M14 3v5h5M9 13h6M9 17h6" />
+            </svg>
+            Read the report
+          </a>
+        </div>
+
+        <a class="sx-team sx-rise" style="--d: 4" href="#team">
+          <span class="sx-avatars">
+            <span style="--c: #b45309">SA</span>
+            <span style="--c: #0369a1">SH</span>
+            <span style="--c: #7c3aed">MA</span>
+          </span>
+          <span
+            ><strong>Three-person team</strong> · Math 221 Numerical
+            Analysis</span
+          >
+        </a>
+      </div>
+
+      <!-- Interactive root finder: replays the exact runs from Project.m -->
+      <div class="sx-hero__visual sx-rise" style="--d: 2">
+        <div class="sx-chip sx-chip--top sx-float">
+          <span class="sx-chip__icon sx-chip__icon--root">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="3" />
+              <path d="M12 2v4m0 12v4M2 12h4m12 0h4" />
+            </svg>
+          </span>
+          <span>
+            <span class="sx-chip__label">Root found</span>
+            <span class="sx-chip__value">x* = 2.000000</span>
+          </span>
+        </div>
+
+        <div class="sx-window sx-solver" data-solver>
+          <div class="sx-window__bar">
+            <span class="sx-window__dots"><i></i><i></i><i></i></span>
+            <span class="sx-window__path">~/math221/Project.m</span>
+            <span class="sx-window__tag"
+              ><span class="sx-live-dot"></span>
+              <span data-solver-status>iterating</span></span
+            >
+          </div>
+
+          <div class="sx-solver__tabs" role="tablist" aria-label="Method">
+            <button
+              type="button"
+              role="tab"
+              class="sx-solver__tab"
+              data-method="bisection"
+              style="--c: var(--m1)"
+            >
+              <i></i>Bisection
+            </button>
+            <button
+              type="button"
+              role="tab"
+              class="sx-solver__tab"
+              data-method="newton"
+              style="--c: var(--m2)"
+            >
+              <i></i>Newton–Raphson
+            </button>
+            <button
+              type="button"
+              role="tab"
+              class="sx-solver__tab"
+              data-method="secant"
+              style="--c: var(--m3)"
+            >
+              <i></i>Secant
+            </button>
+          </div>
+
+          <div class="sx-window__body sx-solver__body">
+            <svg
+              class="sx-plot"
+              viewBox="0 0 520 300"
+              role="img"
+              aria-label="Plot of f(x) = x squared minus 4 with each method's iterates converging to the root x = 2"
+              data-solver-plot
+            ></svg>
+            <div class="sx-solver__formula" data-solver-formula></div>
+          </div>
+
+          <div class="sx-solver__log" data-solver-log aria-live="polite"></div>
+
+          <div class="sx-window__footer">
+            <span><b>f(x)</b> x² − 4</span>
+            <span><b>tol</b> 1e-6</span>
+            <span class="sx-solver__controls">
+              <button type="button" data-solver-step>step ›</button>
+              <button type="button" data-solver-replay>↺ replay</button>
+            </span>
+          </div>
+        </div>
+
+        <div
+          class="sx-chip sx-chip--bottom sx-float"
+          style="--float-delay: -3s"
+        >
+          <span class="sx-chip__icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 20 21 4M14 4h7v7" />
+            </svg>
+          </span>
+          <span>
+            <span class="sx-chip__label">Fastest in general</span>
+            <span class="sx-chip__value">Newton · quadratic</span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <a class="sx-scroll-cue" href="#abstract" aria-label="Scroll to abstract">
+      <span>scroll</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 5v14m-6-6 6 6 6-6" />
+      </svg>
+    </a>
+  </section>
+
+  <!-- ============================== STATS ============================== -->
+  <section class="sx-stats md-grid sx-reveal">
+    <div class="sx-stat">
+      <div class="sx-stat__num"><span data-count="3">3</span></div>
+      <div class="sx-stat__label">
+        Root-finding methods implemented in GNU Octave
+      </div>
+    </div>
+    <div class="sx-stat">
+      <div class="sx-stat__num">
+        <span class="sx-math">x</span><small>*</small>&thinsp;=&thinsp;<span
+          data-count="2"
+          >2</span
+        >
+      </div>
+      <div class="sx-stat__label">The root every method converged to</div>
+    </div>
+    <div class="sx-stat">
+      <div class="sx-stat__num">10<sup>−6</sup></div>
+      <div class="sx-stat__label">Stopping tolerance on each iteration</div>
+    </div>
+    <div class="sx-stat">
+      <div class="sx-stat__num sx-stat__num--split">
+        <span class="is-m1">1</span><em>·</em><span class="is-accent">5</span
+        ><em>·</em><span class="is-m3">6</span>
+      </div>
+      <div class="sx-stat__label">
+        Iterations to converge: bisection · Newton · secant
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== ABSTRACT ============================== -->
+  <section class="sx-section md-grid" id="abstract">
+    <div class="sx-split">
+      <div class="sx-reveal">
+        <div class="sx-kicker">§ 00 · Abstract</div>
+        <h2 class="sx-h2">
+          When algebra runs out, you <em class="sx-h2__em">iterate</em>.
+        </h2>
+        <div class="sx-def">
+          <span class="sx-def__label">Problem</span>
+          <span class="arithmatex">\[ \text{find } x^{*} \text{ such that } f(x^{*}) = 0, \quad f(x) = x^{2} - 4 \]</span>
+        </div>
+      </div>
+      <div class="sx-prose sx-reveal" style="--d: 1">
+        <p>
+          Root-finding sits underneath engineering models, optimisation,
+          finance and simulation. When an equation can't be solved exactly,
+          a numerical method starts from a guess and improves it step by step
+          until the change falls below a tolerance.
+        </p>
+        <p>
+          We studied the three classical approaches, a
+          <strong>bracketing</strong> method and two
+          <strong>open</strong> methods, and ran each on the same function
+          with the same tolerance of <strong>10⁻⁶</strong>.
+        </p>
+        <p>
+          All three reached the exact root <strong>x = 2</strong>.
+          <strong>Newton–Raphson</strong> showed the quadratic convergence
+          the theory predicts, <strong>Secant</strong> came close without
+          needing a derivative, and <strong>Bisection</strong> remained the
+          most dependable.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== METHODS ============================== -->
+  <section class="sx-section md-grid">
+    <div class="sx-section__head sx-reveal">
+      <div class="sx-kicker">§ 01 · Methods</div>
+      <h2 class="sx-h2">One equation, three iteration rules.</h2>
+      <p class="sx-section__lead">
+        Each method trades reliability against speed differently, and that
+        trade-off shows up in the iteration formula itself.
+      </p>
+    </div>
+
+    <div class="sx-methods">
+      <a
+        class="sx-card sx-card--link sx-method sx-reveal"
+        style="--d: 0; --c: var(--m1); --c-soft: var(--m1-soft)"
+        href="methods/#1-bisection-method"
+      >
+        <div class="sx-card__top">
+          <span class="sx-method__tag">bracketing</span>
+          <span class="sx-card__index">method / 01</span>
+        </div>
+        <h3>Bisection</h3>
+        <div class="sx-method__formula">
+          <span class="arithmatex">\[ x_{i+1} = \frac{a + b}{2} \]</span>
+        </div>
+        <p>
+          Halve the interval and keep the half where the sign changes. The
+          Intermediate Value Theorem guarantees a root stays inside.
+        </p>
+        <dl class="sx-method__facts">
+          <div><dt>order</dt><dd>linear · p = 1</dd></div>
+          <div><dt>needs f′</dt><dd>no</dd></div>
+          <div><dt>guarantee</dt><dd>always converges</dd></div>
+        </dl>
+        <span class="sx-card__more">Read the derivation <span class="sx-arrow">→</span></span>
+      </a>
+
+      <a
+        class="sx-card sx-card--link sx-method sx-reveal"
+        style="--d: 1; --c: var(--m2); --c-soft: var(--m2-soft)"
+        href="methods/#2-newtonraphson-method"
+      >
+        <div class="sx-card__top">
+          <span class="sx-method__tag">open · tangent</span>
+          <span class="sx-card__index">method / 02</span>
+        </div>
+        <h3>Newton–Raphson</h3>
+        <div class="sx-method__formula">
+          <span class="arithmatex">\[ x_{i+1} = x_i - \frac{f(x_i)}{f'(x_i)} \]</span>
+        </div>
+        <p>
+          Follow the tangent line at the current guess down to the x-axis.
+          Very fast near the root, but it needs the derivative.
+        </p>
+        <dl class="sx-method__facts">
+          <div><dt>order</dt><dd>quadratic · p = 2</dd></div>
+          <div><dt>needs f′</dt><dd>yes</dd></div>
+          <div><dt>guarantee</dt><dd>local, good x₀</dd></div>
+        </dl>
+        <span class="sx-card__more">Read the derivation <span class="sx-arrow">→</span></span>
+      </a>
+
+      <a
+        class="sx-card sx-card--link sx-method sx-reveal"
+        style="--d: 2; --c: var(--m3); --c-soft: var(--m3-soft)"
+        href="methods/#3-secant-method"
+      >
+        <div class="sx-card__top">
+          <span class="sx-method__tag">open · secant</span>
+          <span class="sx-card__index">method / 03</span>
+        </div>
+        <h3>Secant</h3>
+        <div class="sx-method__formula">
+          <span class="arithmatex">\[ x_{i+1} = x_i - f(x_i)\,\frac{x_i - x_{i-1}}{f(x_i) - f(x_{i-1})} \]</span>
+        </div>
+        <p>
+          Replace the derivative with the slope through the last two points.
+          Almost Newton's speed, with no f′ required.
+        </p>
+        <dl class="sx-method__facts">
+          <div><dt>order</dt><dd>superlinear · p ≈ 1.618</dd></div>
+          <div><dt>needs f′</dt><dd>no</dd></div>
+          <div><dt>guarantee</dt><dd>local, two guesses</dd></div>
+        </dl>
+        <span class="sx-card__more">Read the derivation <span class="sx-arrow">→</span></span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============================== CONVERGENCE ============================== -->
+  <section class="sx-section md-grid">
+    <div class="sx-section__head sx-reveal">
+      <div class="sx-kicker">§ 02 · Convergence</div>
+      <h2 class="sx-h2">How quickly the error disappears.</h2>
+      <p class="sx-section__lead">
+        Absolute error <span class="sx-math">|x</span><sub>n</sub> − 2| at
+        every iteration, on a log scale, using the same starting points as
+        the Octave code. On this scale, a steeper downward curve means faster
+        convergence.
+      </p>
+    </div>
+
+    <div class="sx-converge sx-reveal">
+      <figure class="sx-converge__chart">
+        <svg
+          class="sx-errplot"
+          viewBox="0 0 640 340"
+          role="img"
+          aria-label="Log-scale error per iteration: bisection hits the root in one step, Newton–Raphson converges quadratically in five, secant superlinearly in six"
+          data-errplot
+        ></svg>
+      </figure>
+
+      <div class="sx-converge__side">
+        <div class="sx-legend">
+          <div class="sx-legend__row" style="--c: var(--m1)">
+            <i></i>
+            <span><b>Bisection</b> · [a, b] = [1, 3]</span>
+            <em>1 iter</em>
+          </div>
+          <div class="sx-legend__row" style="--c: var(--m2)">
+            <i></i>
+            <span><b>Newton–Raphson</b> · x₀ = 3</span>
+            <em>5 iter</em>
+          </div>
+          <div class="sx-legend__row" style="--c: var(--m3)">
+            <i></i>
+            <span><b>Secant</b> · x₀ = 1, x₁ = 3</span>
+            <em>6 iter</em>
+          </div>
+        </div>
+        <p class="sx-converge__note">
+          Bisection's single step is a special case: the midpoint of [1, 3]
+          is exactly the root. In general it gains only one binary digit per
+          step. Newton–Raphson roughly <strong>doubles the number of correct
+          digits</strong> with every iteration.
+        </p>
+        <a class="sx-btn sx-btn--ghost sx-btn--sm" href="results/">
+          See the full results
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 12h14m-6-6 6 6-6 6" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== CHAPTERS ============================== -->
+  <section class="sx-section md-grid">
+    <div class="sx-section__head sx-reveal">
+      <div class="sx-kicker">§ 03 · The paper</div>
+      <h2 class="sx-h2">From the problem to the proof of concept.</h2>
+    </div>
+
+    <ol class="sx-timeline sx-reveal">
+      <li class="sx-phase">
+        <a href="introduction/">
+          <span class="sx-phase__num">01</span>
+          <span class="sx-phase__body">
+            <span class="sx-phase__title">Introduction</span>
+            <span class="sx-phase__text"
+              >Why nonlinear equations need numerical methods, and what we set
+              out to compare.</span
+            >
+            <span class="sx-phase__meta"
+              >abstract · objectives <span class="sx-arrow">→</span></span
+            >
+          </span>
+        </a>
+      </li>
+      <li class="sx-phase">
+        <a href="methods/">
+          <span class="sx-phase__num">02</span>
+          <span class="sx-phase__body">
+            <span class="sx-phase__title">Methods</span>
+            <span class="sx-phase__text"
+              >Derivations, procedures and stopping criteria for all three
+              iteration rules.</span
+            >
+            <span class="sx-phase__meta"
+              >3 algorithms <span class="sx-arrow">→</span></span
+            >
+          </span>
+        </a>
+      </li>
+      <li class="sx-phase">
+        <a href="results/">
+          <span class="sx-phase__num">03</span>
+          <span class="sx-phase__body">
+            <span class="sx-phase__title">Results</span>
+            <span class="sx-phase__text"
+              >Octave output, iteration tables and plots of each method
+              converging to x = 2.</span
+            >
+            <span class="sx-phase__meta"
+              >tables · figures <span class="sx-arrow">→</span></span
+            >
+          </span>
+        </a>
+      </li>
+      <li class="sx-phase sx-phase--report">
+        <a href="comparison/">
+          <span class="sx-phase__num">04</span>
+          <span class="sx-phase__body">
+            <span class="sx-phase__title">Comparison &amp; conclusion</span>
+            <span class="sx-phase__text"
+              >Speed, accuracy and stability side by side, plus real-world
+              applications.</span
+            >
+            <span class="sx-phase__meta"
+              >verdict <span class="sx-arrow">→</span></span
+            >
+          </span>
+        </a>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ============================== TEAM ============================== -->
+  <section class="sx-section md-grid" id="team">
+    <div class="sx-section__head sx-reveal">
+      <div class="sx-kicker">§ 04 · Team</div>
+      <h2 class="sx-h2">Derived by hand, verified in code.</h2>
+      <p class="sx-section__lead">
+        Math 221 · Numerical Analysis · Dr. Nahid Fatima · submitted 16
+        November 2025.
+      </p>
+    </div>
+
+    <div class="sx-bento">
+      <article class="sx-card sx-person sx-reveal" style="--d: 0; --c: #b45309">
+        <span class="sx-person__avatar">SA</span>
+        <h3>Shoug Fawaz Alomran</h3>
+        <p>Implementation, documentation and the digital report.</p>
+        <span class="sx-person__role">Octave · MkDocs · publishing</span>
+      </article>
+      <article class="sx-card sx-person sx-reveal" style="--d: 1; --c: #0369a1">
+        <span class="sx-person__avatar">SH</span>
+        <h3>Shahad Abunayan</h3>
+        <p>Handwritten derivations and the theoretical explanation.</p>
+        <span class="sx-person__role">theory · derivations</span>
+      </article>
+      <article class="sx-card sx-person sx-reveal" style="--d: 2; --c: #7c3aed">
+        <span class="sx-person__avatar">MA</span>
+        <h3>Manar Altuwaim</h3>
+        <p>Handwritten calculations and verification of numerical results.</p>
+        <span class="sx-person__role">calculation · verification</span>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============================== CTA ============================== -->
+  <section class="sx-section md-grid">
+    <div class="sx-cta sx-reveal">
+      <div class="sx-cta__grid" aria-hidden="true"></div>
+      <div class="sx-cta__copy">
+        <div class="sx-kicker">∎ Q.E.D.</div>
+        <h2 class="sx-h2">The full write-up, every step shown.</h2>
+        <p>
+          Read the complete report online or download the PDF, with the
+          method derivations, Octave listings, figures and references.
+        </p>
+      </div>
+      <div class="sx-cta__links">
+        <a href="report/"
+          ><span class="sx-cta__tag">WEB</span> Report page
+          <span class="sx-arrow">→</span></a
+        >
+        <a href="report/PDF-Report.pdf"
+          ><span class="sx-cta__tag">PDF</span> Download the report
+          <span class="sx-arrow">→</span></a
+        >
+        <a href="results/"
+          ><span class="sx-cta__tag">DATA</span> Results &amp; figures
+          <span class="sx-arrow">→</span></a
+        >
+        <a href="references/"
+          ><span class="sx-cta__tag">REF</span> References
+          <span class="sx-arrow">→</span></a
+        >
+      </div>
+    </div>
+  </section>
+</div>
+
       
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
-            
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-
-  
-
-
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
-  <label class="md-nav__title" for="__drawer">
-    <a href="." title="Math 221 - Numerical Analysis Project" class="md-nav__button md-logo" aria-label="Math 221 - Numerical Analysis Project" data-md-component="logo">
-      
-  <img src="logo.png" alt="logo">
-
-    </a>
-    Math 221 - Numerical Analysis Project
-  </label>
-  
-  <ul class="md-nav__list" data-md-scrollfix>
-    
-      
-      
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Home
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Home
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#prince-sultan-university" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Prince Sultan University
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#developed-by" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Developed by
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#project-title" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Project Title
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#abstract" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Abstract
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#objectives" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Objectives
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#methods-used" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Methods Used
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#results-summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Results Summary
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#applications" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Applications
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tools-used" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Tools Used
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        References
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="abstract/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Abstract
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="introduction/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Introduction
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="methods/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Methods
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="results/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Results
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="comparison/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Comparison of Methods
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="applications/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Applications
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="conclusion/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Conclusion
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="references/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    References
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="report/" class="md-nav__link ">
-              
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Report
-  
-
-    
-  </span>
-  
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_10" id="__nav_10_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_10">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Report
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="report/PDF-Report.pdf" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    None
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-  </ul>
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#prince-sultan-university" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Prince Sultan University
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#developed-by" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Developed by
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#project-title" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Project Title
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#abstract" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Abstract
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#objectives" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Objectives
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#methods-used" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Methods Used
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#results-summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Results Summary
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#applications" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Applications
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tools-used" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Tools Used
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        References
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           
-            <div class="md-content" data-md-component="content">
-              
-                
-
-
-
-  
-
-
-              
-              <article class="md-content__inner md-typeset">
-                
-                  
-
-
-
-<h1 id="math-221-numerical-analysis-project">Math 221 — Numerical Analysis Project<a class="headerlink" href="#math-221-numerical-analysis-project" title="Permanent link">&para;</a></h1>
-<h3 id="prince-sultan-university">Prince Sultan University<a class="headerlink" href="#prince-sultan-university" title="Permanent link">&para;</a></h3>
-<p><strong>Course:</strong> Math 221: Numerical Analysis<br />
-<strong>Instructor:</strong> Dr. Nahid Fatima<br />
-<strong>Submission Date:</strong> 16 November 2025  </p>
-<hr />
-<h2 id="developed-by">Developed by<a class="headerlink" href="#developed-by" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Student ID</th>
-<th>Role</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Shoug Fawaz Alomran</strong></td>
-<td>223410392</td>
-<td>Implementation, documentation, and digital report development</td>
-</tr>
-<tr>
-<td><strong>Shahad Abunayan</strong></td>
-<td>223410189</td>
-<td>Mathematical handwritten derivations and theoretical explanation</td>
-</tr>
-<tr>
-<td><strong>Manar Altuwaim</strong></td>
-<td>220410529</td>
-<td>Handwritten calculations and verification of numerical results</td>
-</tr>
-</tbody>
-</table>
-<p><em>Collaboration Note:</em><br />
-This project was completed collaboratively. <strong>Shoug Alomran</strong> led the implementation, documentation, and site publishing, while <strong>Shahad Abunayan</strong> and <strong>Manar Altuwaim</strong> contributed to the <strong>handwritten derivations, theoretical analysis, and manual calculations</strong> of all numerical methods.</p>
-<hr />
-<h2 id="project-title">Project Title<a class="headerlink" href="#project-title" title="Permanent link">&para;</a></h2>
-<p><strong>Comparison of Numerical Methods for Solving Nonlinear Equations</strong><br />
-<em>(Bisection, Newton–Raphson, and Secant Methods)</em>  </p>
-<hr />
-<h2 id="abstract">Abstract<a class="headerlink" href="#abstract" title="Permanent link">&para;</a></h2>
-<p>This project studies three numerical methods — <strong>Bisection</strong>, <strong>Newton–Raphson</strong>, and <strong>Secant</strong> — to find the root of nonlinear equations that cannot be solved exactly.<br />
-Each method was implemented using <strong>GNU Octave</strong>, and the results were compared based on convergence speed, accuracy, and stability.  </p>
-<p>All three methods reached the same correct root (<strong>x = 2</strong>).<br />
-The <strong>Newton–Raphson Method</strong> converged the fastest, followed by <strong>Secant</strong>, while <strong>Bisection</strong> remained the most reliable though slower.</p>
-<hr />
-<h2 id="objectives">Objectives<a class="headerlink" href="#objectives" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Apply and compare classical numerical root-finding methods.  </li>
-<li>Study their convergence rate, accuracy, and computational efficiency.  </li>
-<li>Display results through tables and graphs.  </li>
-<li>Strengthen understanding of iterative numerical analysis through practical implementation.  </li>
-</ol>
-<hr />
-<h2 id="methods-used">Methods Used<a class="headerlink" href="#methods-used" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Method</th>
-<th>Description</th>
-<th>Characteristics</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Bisection Method</strong></td>
-<td>Divides an interval repeatedly to locate the root.</td>
-<td>Slow but guaranteed convergence.</td>
-</tr>
-<tr>
-<td><strong>Newton–Raphson Method</strong></td>
-<td>Uses tangent lines based on derivatives to find the root.</td>
-<td>Fast but requires a good initial guess.</td>
-</tr>
-<tr>
-<td><strong>Secant Method</strong></td>
-<td>Approximates the derivative using two points.</td>
-<td>Moderate speed and simple to implement.</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="results-summary">Results Summary<a class="headerlink" href="#results-summary" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Method</th>
-<th>Approximate Root</th>
-<th>Iterations</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Bisection</strong></td>
-<td>2.000000</td>
-<td>1</td>
-</tr>
-<tr>
-<td><strong>Newton–Raphson</strong></td>
-<td>2.000000</td>
-<td>5</td>
-</tr>
-<tr>
-<td><strong>Secant</strong></td>
-<td>2.000000</td>
-<td>6</td>
-</tr>
-</tbody>
-</table>
-<p>All methods converged to the same root (<strong>x = 2</strong>).<br />
-The <strong>Newton–Raphson Method</strong> was the fastest, confirming the theory discussed in class.</p>
-<hr />
-<h2 id="applications">Applications<a class="headerlink" href="#applications" title="Permanent link">&para;</a></h2>
-<p>Numerical root-finding methods are widely used in: </p>
-<ul>
-<li>Engineering and physics modeling  </li>
-<li>Optimization and computer algorithms  </li>
-<li>Financial and economic calculations  </li>
-<li>Simulation and control systems  </li>
-</ul>
-<hr />
-<h2 id="tools-used">Tools Used<a class="headerlink" href="#tools-used" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong>GNU Octave 10.3.0</strong> (compatible with MATLAB)  </li>
-<li><strong>Visual Studio Code / macOS Terminal</strong>  </li>
-<li><strong>MkDocs Material</strong> for creating this digital report  </li>
-<li><strong>Git &amp; GitHub</strong> for version control and deployment  </li>
-</ul>
-<hr />
-<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
-<p>See the complete list in the <a href="/references/">References</a> section.</p>
-
-
-
-
-
-
-
-
-
-
-
-
-                
-              </article>
-            </div>
-          
-          
-<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
   Back to top
 </button>
         
       </main>
       
-        <footer class="md-footer">
+<footer class="md-footer sx-footer">
   
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-copyright">
   
-    <div class="md-copyright__highlight">
-      © 2026 Shoug Fawaz Alomran · All rights reserved
+
+  <div class="sx-footer__main">
+    <div class="sx-footer__grid md-grid">
+      <div class="sx-footer__brand">
+        <a class="sx-brand" href=".">
+          <span class="sx-brand__mark"
+            ><img
+              src="img/logo-icon.png"
+              alt=""
+              width="28"
+              height="28"
+          /></span>
+          <span class="sx-brand__code">MATH221</span>
+          <span class="sx-brand__slash">/</span>
+          <span class="sx-brand__name">f(x)=0</span>
+        </a>
+        <p>
+          Bisection, Newton–Raphson and Secant methods compared on
+          <span class="sx-math">f</span>(<span class="sx-math">x</span>) =
+          <span class="sx-math">x</span>² − 4. Built at Prince Sultan
+          University.
+        </p>
+        <div class="sx-footer__formula" aria-hidden="true">
+          x<sub>n+1</sub> = x<sub>n</sub> − f(x<sub>n</sub>) / f′(x<sub>n</sub>)
+        </div>
+        <div class="sx-footer__status">
+          <span class="sx-live-dot"></span> Converged · |Δx| &lt; 10⁻⁶
+        </div>
+      </div>
+
+      <div class="sx-footer__col">
+        <div class="sx-footer__title">Study</div>
+        <a href="abstract/">Abstract</a>
+        <a href="introduction/">Introduction</a>
+        <a href="methods/">Methods</a>
+      </div>
+
+      <div class="sx-footer__col">
+        <div class="sx-footer__title">Findings</div>
+        <a href="results/">Results</a>
+        <a href="comparison/">Comparison</a>
+        <a href="applications/">Applications</a>
+        <a href="conclusion/">Conclusion</a>
+        <a href="references/">References</a>
+      </div>
+
+      <div class="sx-footer__col">
+        <div class="sx-footer__title">Report</div>
+        <a href="report/">Report page</a>
+        <a href="report/PDF-Report.pdf"
+          >PDF report <span>PDF</span></a
+        >
+        <a href="privacy-notice/">Privacy notice</a>
+        <a href="academic-disclaimer/">Academic disclaimer</a>
+        <a href="copyright/">Copyright</a>
+      </div>
+
+      <div class="sx-footer__col">
+        <div class="sx-footer__title">Contact</div>
+        <a href="mailto:inquiry@shoug-tech.com">inquiry@shoug-tech.com</a>
+        <a href="https://shoug-tech.com/" target="_blank" rel="noopener"
+          >shoug-tech.com ↗</a
+        >
+        <a
+          href="https://shoug-tech.com/work/projects/"
+          target="_blank"
+          rel="noopener"
+          >More projects ↗</a
+        >
+      </div>
     </div>
-  
-  
-    Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
-    </a>
-  
-</div>
-      
+
+    <div class="sx-footer__bottom md-grid">
+      <span>© 2026 Shoug Fawaz Alomran · All rights reserved</span>
+      <span
+        >Made by
+        <a
+          href="https://blueprint.shoug-tech.com/"
+          target="_blank"
+          rel="noopener"
+          >Blueprint</a
+        ></span
+      >
     </div>
   </div>
 </footer>
-      
+
     </div>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
     
     
-      
-      
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.top", "navigation.path", "toc.follow", "search.suggest", "search.highlight", "content.code.copy"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.indexes", "navigation.top", "navigation.path", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy"], "search": "assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="assets/javascripts/bundle.cd18aaf1.min.js"></script>
       
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script src="javascripts/mathjax.js"></script>
       
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script>
       
-        <script src="javascripts/cta-footer.js"></script>
+        <script src="javascripts/site.js"></script>
+      
+        <script src="javascripts/roots.js"></script>
       
         <script src="javascripts/seo.js"></script>
       

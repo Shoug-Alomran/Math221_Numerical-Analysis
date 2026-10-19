@@ -1,0 +1,540 @@
+{% extends "main.html" %}
+{#- Landing page: full-bleed sections rendered in the hero block; the regular
+docs layout (sidebars + article) is suppressed for this page only. -#}
+{% block site_nav %}{% endblock %}
+{% block container %}{% endblock %}
+
+{% block hero %}
+<div class="sx-home">
+  <!-- ============================== HERO ============================== -->
+  <section class="sx-hero">
+    <div class="sx-hero__bg" aria-hidden="true">
+      <div class="sx-hero__glow sx-hero__glow--a"></div>
+      <div class="sx-hero__glow sx-hero__glow--b"></div>
+      <div class="sx-glyphs">
+        <span style="--x: 6%; --y: 18%; --r: -8deg">∫</span>
+        <span style="--x: 44%; --y: 8%; --r: 6deg">∂</span>
+        <span style="--x: 3%; --y: 74%; --r: 4deg">Σ</span>
+        <span style="--x: 52%; --y: 86%; --r: -5deg">∇</span>
+        <span style="--x: 92%; --y: 90%; --r: 10deg">ε</span>
+      </div>
+    </div>
+
+    <div class="sx-hero__inner md-grid">
+      <div class="sx-hero__copy">
+        <a
+          class="sx-badge sx-rise"
+          style="--d: 0"
+          href="{{ 'introduction/' | url }}"
+        >
+          <span class="sx-live-dot"></span>
+          Math 221 · Prince Sultan University
+        </a>
+
+        <h1 class="sx-hero__title sx-rise" style="--d: 1">
+          Three ways to solve
+          <span class="sx-hero__eq"
+            ><i>f</i>(<i>x</i>)&thinsp;=&thinsp;0</span
+          >
+        </h1>
+
+        <p class="sx-hero__lead sx-rise" style="--d: 2">
+          Most nonlinear equations have no closed-form answer, so we iterate
+          towards one. This project implements the
+          <strong class="is-m1">Bisection</strong>,
+          <strong class="is-accent">Newton–Raphson</strong> and
+          <strong class="is-m3">Secant</strong> methods in GNU Octave and
+          compares how fast, how accurately and how reliably each one
+          converges on <span class="sx-math">f</span>(<span class="sx-math"
+            >x</span
+          >) = <span class="sx-math">x</span>² − 4.
+        </p>
+
+        <div class="sx-hero__actions sx-rise" style="--d: 3">
+          <a class="sx-btn sx-btn--primary" href="{{ 'methods/' | url }}">
+            Explore the methods
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h14m-6-6 6 6-6 6" />
+            </svg>
+          </a>
+          <a class="sx-btn sx-btn--ghost" href="{{ 'report/' | url }}">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"
+              />
+              <path d="M14 3v5h5M9 13h6M9 17h6" />
+            </svg>
+            Read the report
+          </a>
+        </div>
+
+        <a class="sx-team sx-rise" style="--d: 4" href="#team">
+          <span class="sx-avatars">
+            <span style="--c: #b45309">SA</span>
+            <span style="--c: #0369a1">SH</span>
+            <span style="--c: #7c3aed">MA</span>
+          </span>
+          <span
+            ><strong>Three-person team</strong> · Math 221 Numerical
+            Analysis</span
+          >
+        </a>
+      </div>
+
+      <!-- Interactive root finder: replays the exact runs from Project.m -->
+      <div class="sx-hero__visual sx-rise" style="--d: 2">
+        <div class="sx-chip sx-chip--top sx-float">
+          <span class="sx-chip__icon sx-chip__icon--root">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="3" />
+              <path d="M12 2v4m0 12v4M2 12h4m12 0h4" />
+            </svg>
+          </span>
+          <span>
+            <span class="sx-chip__label">Root found</span>
+            <span class="sx-chip__value">x* = 2.000000</span>
+          </span>
+        </div>
+
+        <div class="sx-window sx-solver" data-solver>
+          <div class="sx-window__bar">
+            <span class="sx-window__dots"><i></i><i></i><i></i></span>
+            <span class="sx-window__path">~/math221/Project.m</span>
+            <span class="sx-window__tag"
+              ><span class="sx-live-dot"></span>
+              <span data-solver-status>iterating</span></span
+            >
+          </div>
+
+          <div class="sx-solver__tabs" role="tablist" aria-label="Method">
+            <button
+              type="button"
+              role="tab"
+              class="sx-solver__tab"
+              data-method="bisection"
+              style="--c: var(--m1)"
+            >
+              <i></i>Bisection
+            </button>
+            <button
+              type="button"
+              role="tab"
+              class="sx-solver__tab"
+              data-method="newton"
+              style="--c: var(--m2)"
+            >
+              <i></i>Newton–Raphson
+            </button>
+            <button
+              type="button"
+              role="tab"
+              class="sx-solver__tab"
+              data-method="secant"
+              style="--c: var(--m3)"
+            >
+              <i></i>Secant
+            </button>
+          </div>
+
+          <div class="sx-window__body sx-solver__body">
+            <svg
+              class="sx-plot"
+              viewBox="0 0 520 300"
+              role="img"
+              aria-label="Plot of f(x) = x squared minus 4 with each method's iterates converging to the root x = 2"
+              data-solver-plot
+            ></svg>
+            <div class="sx-solver__formula" data-solver-formula></div>
+          </div>
+
+          <div class="sx-solver__log" data-solver-log aria-live="polite"></div>
+
+          <div class="sx-window__footer">
+            <span><b>f(x)</b> x² − 4</span>
+            <span><b>tol</b> 1e-6</span>
+            <span class="sx-solver__controls">
+              <button type="button" data-solver-step>step ›</button>
+              <button type="button" data-solver-replay>↺ replay</button>
+            </span>
+          </div>
+        </div>
+
+        <div
+          class="sx-chip sx-chip--bottom sx-float"
+          style="--float-delay: -3s"
+        >
+          <span class="sx-chip__icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 20 21 4M14 4h7v7" />
+            </svg>
+          </span>
+          <span>
+            <span class="sx-chip__label">Fastest in general</span>
+            <span class="sx-chip__value">Newton · quadratic</span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <a class="sx-scroll-cue" href="#abstract" aria-label="Scroll to abstract">
+      <span>scroll</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 5v14m-6-6 6 6 6-6" />
+      </svg>
+    </a>
+  </section>
+
+  <!-- ============================== STATS ============================== -->
+  <section class="sx-stats md-grid sx-reveal">
+    <div class="sx-stat">
+      <div class="sx-stat__num"><span data-count="3">3</span></div>
+      <div class="sx-stat__label">
+        Root-finding methods implemented in GNU Octave
+      </div>
+    </div>
+    <div class="sx-stat">
+      <div class="sx-stat__num">
+        <span class="sx-math">x</span><small>*</small>&thinsp;=&thinsp;<span
+          data-count="2"
+          >2</span
+        >
+      </div>
+      <div class="sx-stat__label">The root every method converged to</div>
+    </div>
+    <div class="sx-stat">
+      <div class="sx-stat__num">10<sup>−6</sup></div>
+      <div class="sx-stat__label">Stopping tolerance on each iteration</div>
+    </div>
+    <div class="sx-stat">
+      <div class="sx-stat__num sx-stat__num--split">
+        <span class="is-m1">1</span><em>·</em><span class="is-accent">5</span
+        ><em>·</em><span class="is-m3">6</span>
+      </div>
+      <div class="sx-stat__label">
+        Iterations to converge: bisection · Newton · secant
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== ABSTRACT ============================== -->
+  <section class="sx-section md-grid" id="abstract">
+    <div class="sx-split">
+      <div class="sx-reveal">
+        <div class="sx-kicker">§ 00 · Abstract</div>
+        <h2 class="sx-h2">
+          When algebra runs out, you <em class="sx-h2__em">iterate</em>.
+        </h2>
+        <div class="sx-def">
+          <span class="sx-def__label">Problem</span>
+          <span class="arithmatex">\[ \text{find } x^{*} \text{ such that } f(x^{*}) = 0, \quad f(x) = x^{2} - 4 \]</span>
+        </div>
+      </div>
+      <div class="sx-prose sx-reveal" style="--d: 1">
+        <p>
+          Root-finding sits underneath engineering models, optimisation,
+          finance and simulation. When an equation can't be solved exactly,
+          a numerical method starts from a guess and improves it step by step
+          until the change falls below a tolerance.
+        </p>
+        <p>
+          We studied the three classical approaches, a
+          <strong>bracketing</strong> method and two
+          <strong>open</strong> methods, and ran each on the same function
+          with the same tolerance of <strong>10⁻⁶</strong>.
+        </p>
+        <p>
+          All three reached the exact root <strong>x = 2</strong>.
+          <strong>Newton–Raphson</strong> showed the quadratic convergence
+          the theory predicts, <strong>Secant</strong> came close without
+          needing a derivative, and <strong>Bisection</strong> remained the
+          most dependable.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== METHODS ============================== -->
+  <section class="sx-section md-grid">
+    <div class="sx-section__head sx-reveal">
+      <div class="sx-kicker">§ 01 · Methods</div>
+      <h2 class="sx-h2">One equation, three iteration rules.</h2>
+      <p class="sx-section__lead">
+        Each method trades reliability against speed differently, and that
+        trade-off shows up in the iteration formula itself.
+      </p>
+    </div>
+
+    <div class="sx-methods">
+      <a
+        class="sx-card sx-card--link sx-method sx-reveal"
+        style="--d: 0; --c: var(--m1); --c-soft: var(--m1-soft)"
+        href="{{ 'methods/' | url }}#1-bisection-method"
+      >
+        <div class="sx-card__top">
+          <span class="sx-method__tag">bracketing</span>
+          <span class="sx-card__index">method / 01</span>
+        </div>
+        <h3>Bisection</h3>
+        <div class="sx-method__formula">
+          <span class="arithmatex">\[ x_{i+1} = \frac{a + b}{2} \]</span>
+        </div>
+        <p>
+          Halve the interval and keep the half where the sign changes. The
+          Intermediate Value Theorem guarantees a root stays inside.
+        </p>
+        <dl class="sx-method__facts">
+          <div><dt>order</dt><dd>linear · p = 1</dd></div>
+          <div><dt>needs f′</dt><dd>no</dd></div>
+          <div><dt>guarantee</dt><dd>always converges</dd></div>
+        </dl>
+        <span class="sx-card__more">Read the derivation <span class="sx-arrow">→</span></span>
+      </a>
+
+      <a
+        class="sx-card sx-card--link sx-method sx-reveal"
+        style="--d: 1; --c: var(--m2); --c-soft: var(--m2-soft)"
+        href="{{ 'methods/' | url }}#2-newtonraphson-method"
+      >
+        <div class="sx-card__top">
+          <span class="sx-method__tag">open · tangent</span>
+          <span class="sx-card__index">method / 02</span>
+        </div>
+        <h3>Newton–Raphson</h3>
+        <div class="sx-method__formula">
+          <span class="arithmatex">\[ x_{i+1} = x_i - \frac{f(x_i)}{f'(x_i)} \]</span>
+        </div>
+        <p>
+          Follow the tangent line at the current guess down to the x-axis.
+          Very fast near the root, but it needs the derivative.
+        </p>
+        <dl class="sx-method__facts">
+          <div><dt>order</dt><dd>quadratic · p = 2</dd></div>
+          <div><dt>needs f′</dt><dd>yes</dd></div>
+          <div><dt>guarantee</dt><dd>local, good x₀</dd></div>
+        </dl>
+        <span class="sx-card__more">Read the derivation <span class="sx-arrow">→</span></span>
+      </a>
+
+      <a
+        class="sx-card sx-card--link sx-method sx-reveal"
+        style="--d: 2; --c: var(--m3); --c-soft: var(--m3-soft)"
+        href="{{ 'methods/' | url }}#3-secant-method"
+      >
+        <div class="sx-card__top">
+          <span class="sx-method__tag">open · secant</span>
+          <span class="sx-card__index">method / 03</span>
+        </div>
+        <h3>Secant</h3>
+        <div class="sx-method__formula">
+          <span class="arithmatex">\[ x_{i+1} = x_i - f(x_i)\,\frac{x_i - x_{i-1}}{f(x_i) - f(x_{i-1})} \]</span>
+        </div>
+        <p>
+          Replace the derivative with the slope through the last two points.
+          Almost Newton's speed, with no f′ required.
+        </p>
+        <dl class="sx-method__facts">
+          <div><dt>order</dt><dd>superlinear · p ≈ 1.618</dd></div>
+          <div><dt>needs f′</dt><dd>no</dd></div>
+          <div><dt>guarantee</dt><dd>local, two guesses</dd></div>
+        </dl>
+        <span class="sx-card__more">Read the derivation <span class="sx-arrow">→</span></span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============================== CONVERGENCE ============================== -->
+  <section class="sx-section md-grid">
+    <div class="sx-section__head sx-reveal">
+      <div class="sx-kicker">§ 02 · Convergence</div>
+      <h2 class="sx-h2">How quickly the error disappears.</h2>
+      <p class="sx-section__lead">
+        Absolute error <span class="sx-math">|x</span><sub>n</sub> − 2| at
+        every iteration, on a log scale, using the same starting points as
+        the Octave code. On this scale, a steeper downward curve means faster
+        convergence.
+      </p>
+    </div>
+
+    <div class="sx-converge sx-reveal">
+      <figure class="sx-converge__chart">
+        <svg
+          class="sx-errplot"
+          viewBox="0 0 640 340"
+          role="img"
+          aria-label="Log-scale error per iteration: bisection hits the root in one step, Newton–Raphson converges quadratically in five, secant superlinearly in six"
+          data-errplot
+        ></svg>
+      </figure>
+
+      <div class="sx-converge__side">
+        <div class="sx-legend">
+          <div class="sx-legend__row" style="--c: var(--m1)">
+            <i></i>
+            <span><b>Bisection</b> · [a, b] = [1, 3]</span>
+            <em>1 iter</em>
+          </div>
+          <div class="sx-legend__row" style="--c: var(--m2)">
+            <i></i>
+            <span><b>Newton–Raphson</b> · x₀ = 3</span>
+            <em>5 iter</em>
+          </div>
+          <div class="sx-legend__row" style="--c: var(--m3)">
+            <i></i>
+            <span><b>Secant</b> · x₀ = 1, x₁ = 3</span>
+            <em>6 iter</em>
+          </div>
+        </div>
+        <p class="sx-converge__note">
+          Bisection's single step is a special case: the midpoint of [1, 3]
+          is exactly the root. In general it gains only one binary digit per
+          step. Newton–Raphson roughly <strong>doubles the number of correct
+          digits</strong> with every iteration.
+        </p>
+        <a class="sx-btn sx-btn--ghost sx-btn--sm" href="{{ 'results/' | url }}">
+          See the full results
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 12h14m-6-6 6 6-6 6" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== CHAPTERS ============================== -->
+  <section class="sx-section md-grid">
+    <div class="sx-section__head sx-reveal">
+      <div class="sx-kicker">§ 03 · The paper</div>
+      <h2 class="sx-h2">From the problem to the proof of concept.</h2>
+    </div>
+
+    <ol class="sx-timeline sx-reveal">
+      <li class="sx-phase">
+        <a href="{{ 'introduction/' | url }}">
+          <span class="sx-phase__num">01</span>
+          <span class="sx-phase__body">
+            <span class="sx-phase__title">Introduction</span>
+            <span class="sx-phase__text"
+              >Why nonlinear equations need numerical methods, and what we set
+              out to compare.</span
+            >
+            <span class="sx-phase__meta"
+              >abstract · objectives <span class="sx-arrow">→</span></span
+            >
+          </span>
+        </a>
+      </li>
+      <li class="sx-phase">
+        <a href="{{ 'methods/' | url }}">
+          <span class="sx-phase__num">02</span>
+          <span class="sx-phase__body">
+            <span class="sx-phase__title">Methods</span>
+            <span class="sx-phase__text"
+              >Derivations, procedures and stopping criteria for all three
+              iteration rules.</span
+            >
+            <span class="sx-phase__meta"
+              >3 algorithms <span class="sx-arrow">→</span></span
+            >
+          </span>
+        </a>
+      </li>
+      <li class="sx-phase">
+        <a href="{{ 'results/' | url }}">
+          <span class="sx-phase__num">03</span>
+          <span class="sx-phase__body">
+            <span class="sx-phase__title">Results</span>
+            <span class="sx-phase__text"
+              >Octave output, iteration tables and plots of each method
+              converging to x = 2.</span
+            >
+            <span class="sx-phase__meta"
+              >tables · figures <span class="sx-arrow">→</span></span
+            >
+          </span>
+        </a>
+      </li>
+      <li class="sx-phase sx-phase--report">
+        <a href="{{ 'comparison/' | url }}">
+          <span class="sx-phase__num">04</span>
+          <span class="sx-phase__body">
+            <span class="sx-phase__title">Comparison &amp; conclusion</span>
+            <span class="sx-phase__text"
+              >Speed, accuracy and stability side by side, plus real-world
+              applications.</span
+            >
+            <span class="sx-phase__meta"
+              >verdict <span class="sx-arrow">→</span></span
+            >
+          </span>
+        </a>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ============================== TEAM ============================== -->
+  <section class="sx-section md-grid" id="team">
+    <div class="sx-section__head sx-reveal">
+      <div class="sx-kicker">§ 04 · Team</div>
+      <h2 class="sx-h2">Derived by hand, verified in code.</h2>
+      <p class="sx-section__lead">
+        Math 221 · Numerical Analysis · Dr. Nahid Fatima · submitted 16
+        November 2025.
+      </p>
+    </div>
+
+    <div class="sx-bento">
+      <article class="sx-card sx-person sx-reveal" style="--d: 0; --c: #b45309">
+        <span class="sx-person__avatar">SA</span>
+        <h3>Shoug Fawaz Alomran</h3>
+        <p>Implementation, documentation and the digital report.</p>
+        <span class="sx-person__role">Octave · MkDocs · publishing</span>
+      </article>
+      <article class="sx-card sx-person sx-reveal" style="--d: 1; --c: #0369a1">
+        <span class="sx-person__avatar">SH</span>
+        <h3>Shahad Abunayan</h3>
+        <p>Handwritten derivations and the theoretical explanation.</p>
+        <span class="sx-person__role">theory · derivations</span>
+      </article>
+      <article class="sx-card sx-person sx-reveal" style="--d: 2; --c: #7c3aed">
+        <span class="sx-person__avatar">MA</span>
+        <h3>Manar Altuwaim</h3>
+        <p>Handwritten calculations and verification of numerical results.</p>
+        <span class="sx-person__role">calculation · verification</span>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============================== CTA ============================== -->
+  <section class="sx-section md-grid">
+    <div class="sx-cta sx-reveal">
+      <div class="sx-cta__grid" aria-hidden="true"></div>
+      <div class="sx-cta__copy">
+        <div class="sx-kicker">∎ Q.E.D.</div>
+        <h2 class="sx-h2">The full write-up, every step shown.</h2>
+        <p>
+          Read the complete report online or download the PDF, with the
+          method derivations, Octave listings, figures and references.
+        </p>
+      </div>
+      <div class="sx-cta__links">
+        <a href="{{ 'report/' | url }}"
+          ><span class="sx-cta__tag">WEB</span> Report page
+          <span class="sx-arrow">→</span></a
+        >
+        <a href="{{ 'report/PDF-Report.pdf' | url }}"
+          ><span class="sx-cta__tag">PDF</span> Download the report
+          <span class="sx-arrow">→</span></a
+        >
+        <a href="{{ 'results/' | url }}"
+          ><span class="sx-cta__tag">DATA</span> Results &amp; figures
+          <span class="sx-arrow">→</span></a
+        >
+        <a href="{{ 'references/' | url }}"
+          ><span class="sx-cta__tag">REF</span> References
+          <span class="sx-arrow">→</span></a
+        >
+      </div>
+    </div>
+  </section>
+</div>
+{% endblock %}

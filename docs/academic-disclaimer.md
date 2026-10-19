@@ -28,9 +28,9 @@ This project is intended **solely for educational and evaluation purposes**.
 
 It is:
 
-- Not a production system  
-- Not optimized for commercial deployment  
-- Not intended for real-world performance benchmarking  
+- Not a production system
+- Not optimized for commercial deployment
+- Not intended for real-world performance benchmarking
 
 The implementation prioritizes conceptual clarity over production-level optimization.
 
@@ -42,9 +42,9 @@ All experiments were conducted in a controlled virtualized Linux environment.
 
 The matrix data used during execution:
 
-- Is randomly generated at runtime  
-- Contains no real-world or personal information  
-- Is used strictly for computational performance testing  
+- Is randomly generated at runtime
+- Contains no real-world or personal information
+- Is used strictly for computational performance testing
 
 ---
 
@@ -52,9 +52,9 @@ The matrix data used during execution:
 
 All content, documentation, and experimental results presented on this site:
 
-- Are part of a university coursework submission  
-- Reflect original academic work unless otherwise cited  
-- Comply with institutional academic integrity policies  
+- Are part of a university coursework submission
+- Reflect original academic work unless otherwise cited
+- Comply with institutional academic integrity policies
 
 ---
 

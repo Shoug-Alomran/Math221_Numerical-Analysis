@@ -1,4 +1,4 @@
-# Abstract  
+# Abstract
 
 This project focuses on three numerical methods — **Bisection**, **Newton–Raphson**, and **Secant** — to find the root of a nonlinear equation.  
 These methods are used when equations cannot be solved exactly and an approximate solution is needed.

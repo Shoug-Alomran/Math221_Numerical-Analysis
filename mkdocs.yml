@@ -11,57 +11,65 @@ hooks:
 theme:
   name: material
   custom_dir: overrides
-  logo: logo.png
-  favicon: google.png
+  logo: img/logo-icon.png
+  favicon: img/favicon.png
+  font: false
   language: en
   features:
-    - navigation.tabs
-    - navigation.tabs.sticky
+    - navigation.instant
+    - navigation.instant.progress
     - navigation.sections
     - navigation.indexes
     - navigation.top
     - navigation.path
-    - toc.follow
+    - navigation.footer
     - search.suggest
     - search.highlight
     - content.code.copy
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: indigo
-      accent: indigo
+      primary: custom
+      accent: custom
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: indigo
-      accent: indigo
+      primary: custom
+      accent: custom
       toggle:
         icon: material/white-balance-sunny
         name: Switch to light mode
 
+# Sections are split on " - ": the first part is the header dropdown label,
+# the second is the caption shown inside the menu.
 nav:
   - Home: index.md
-  - Abstract: abstract.md
-  - Introduction: introduction.md
-  - Methods: methods.md
-  - Results: results.md
-  - Comparison of Methods: comparison.md
-  - Applications: applications.md
-  - Conclusion: conclusion.md
-  - References: references.md
-  - Report: 
-    - report/index.md
-    - report/PDF-Report.pdf
+  - Study - Background & methods:
+      - Abstract: abstract.md
+      - Introduction: introduction.md
+      - Methods: methods.md
+  - Findings - Results & discussion:
+      - Results: results.md
+      - Comparison of Methods: comparison.md
+      - Applications: applications.md
+      - Conclusion: conclusion.md
+      - References: references.md
+  - Report - Deliverables:
+      - Report: report/index.md
+      - PDF report: report/PDF-Report.pdf
 
 markdown_extensions:
   - admonition
   - attr_list
   - md_in_html
+  - tables
   - pymdownx.details
   - pymdownx.superfences
   - pymdownx.inlinehilite
+  - pymdownx.arithmatex:
+      generic: true
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
@@ -72,7 +80,8 @@ extra_css:
   - styles/extra.css
 
 extra_javascript:
-  - https://polyfill.io/v3/polyfill.min.js?features=es6
-  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-  - javascripts/cta-footer.js
+  - javascripts/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js
+  - javascripts/site.js
+  - javascripts/roots.js
   - javascripts/seo.js

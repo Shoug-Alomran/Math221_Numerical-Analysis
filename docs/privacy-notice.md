@@ -27,25 +27,29 @@ This website does **not** collect, store, or process personal data.
 
 <div class="grid cards" markdown>
 
--   :material-account-off-outline: **No User Accounts**
+- :material-account-off-outline: **No User Accounts**
 
-    ---
-    Visitors cannot create accounts or submit login credentials.
+  ***
 
--   :material-cookie-off-outline: **No Tracking Cookies**
+  Visitors cannot create accounts or submit login credentials.
 
-    ---
-    The site does not use cookies for analytics or behavioral tracking.
+- :material-cookie-off-outline: **No Tracking Cookies**
 
--   :material-chart-line-variant: **No Analytics Services**
+  ***
 
-    ---
-    No third-party analytics platforms are integrated.
+  The site does not use cookies for analytics or behavioral tracking.
 
--   :material-database-off-outline: **No Stored Submissions**
+- :material-chart-line-variant: **No Analytics Services**
 
-    ---
-    The website does not store form submissions or user-generated data.
+  ***
+
+  No third-party analytics platforms are integrated.
+
+- :material-database-off-outline: **No Stored Submissions**
+
+  ***
+
+  The website does not store form submissions or user-generated data.
 
 </div>
 
@@ -55,8 +59,8 @@ This website does **not** collect, store, or process personal data.
 
 If you contact the project author via email:
 
-- Your message is handled through your own email provider  
-- The website itself does not store or process email data  
+- Your message is handled through your own email provider
+- The website itself does not store or process email data
 
 ---
 
@@ -64,9 +68,9 @@ If you contact the project author via email:
 
 All data used within this project is:
 
-- Randomly generated or sample data  
-- Created strictly for academic experimentation  
-- Not associated with real individuals  
+- Randomly generated or sample data
+- Created strictly for academic experimentation
+- Not associated with real individuals
 
 No personal, medical, or confidential information is used.
 

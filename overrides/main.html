@@ -1,8 +1,183 @@
 {% extends "base.html" %}
 
+{% block fonts %}
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=STIX+Two+Text:ital,wght@0,400;0,500;1,400;1,500&display=swap"
+/>
+{% endblock %}
+
 {% block extrahead %}
-  {{ super() }}
-  {% if page and page.meta and page.meta.robots %}
-    <meta name="robots" content="{{ page.meta.robots }}">
+{{ super() }}
+<script>
+  document.documentElement.classList.add("sx-js");
+</script>
+<meta name="theme-color" content="#b45309" />
+<link
+  rel="apple-touch-icon"
+  sizes="180x180"
+  href="{{ 'img/apple-touch-icon.png' | url }}"
+/>
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="{{ config.site_name }}" />
+<meta
+  property="og:title"
+  content="{% if page and page.title and not page.is_homepage %}{{ page.title }} - {% endif %}{{ config.site_name }}"
+/>
+<meta
+  property="og:description"
+  content="{{ (page.meta.description if page and page.meta and page.meta.description) or config.site_description }}"
+/>
+<meta property="og:image" content="{{ config.site_url }}logo.png" />
+<meta
+  property="og:image:alt"
+  content="Math 221 — Numerical Analysis Project banner"
+/>
+{% if page and page.canonical_url %}
+<meta property="og:url" content="{{ page.canonical_url }}" />
+{% endif %}
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="{{ config.site_url }}logo.png" />
+{% if page and page.meta and page.meta.robots %}
+<meta name="robots" content="{{ page.meta.robots }}" />
+{% endif %}
+{% endblock %}
+
+{#- The header carries its own dropdown navigation, so the tab bar is not
+rendered. -#}
+{% block tabs %}{% endblock %}
+
+{% block content %}
+<div class="sx-eyebrow">
+  <span class="sx-eyebrow__dot"></span>
+  {%- if page.parent %} {{ page.parent.title | replace(" - ", " · ") }}
+  {%- else %} Math 221 · Numerical Analysis {%- endif %}
+</div>
+{{ super() }}
+{% endblock %}
+
+{% block footer %}
+<footer class="md-footer sx-footer">
+  {% set hide_footer_nav = page.meta and page.meta.hide and "footer" in
+  page.meta.hide %}
+  {% if (page.previous_page or page.next_page) and not hide_footer_nav %}
+  <nav class="sx-pager md-grid" aria-label="{{ lang.t('footer') }}">
+    {% if page.previous_page %}
+    <a
+      href="{{ page.previous_page.url | url }}"
+      class="sx-pager__link sx-pager__link--prev"
+    >
+      <span class="sx-pager__dir">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M19 12H5m6 6-6-6 6-6" />
+        </svg>
+        Previous
+      </span>
+      <span class="sx-pager__title">{{ page.previous_page.title }}</span>
+    </a>
+    {% else %}<span></span>{% endif %}
+    {% if page.next_page %}
+    <a
+      href="{{ page.next_page.url | url }}"
+      class="sx-pager__link sx-pager__link--next"
+    >
+      <span class="sx-pager__dir">
+        Next
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M5 12h14m-6-6 6 6-6 6" />
+        </svg>
+      </span>
+      <span class="sx-pager__title">{{ page.next_page.title }}</span>
+    </a>
+    {% endif %}
+  </nav>
   {% endif %}
+
+  <div class="sx-footer__main">
+    <div class="sx-footer__grid md-grid">
+      <div class="sx-footer__brand">
+        <a class="sx-brand" href="{{ nav.homepage.url | url }}">
+          <span class="sx-brand__mark"
+            ><img
+              src="{{ config.theme.logo | url }}"
+              alt=""
+              width="28"
+              height="28"
+          /></span>
+          <span class="sx-brand__code">MATH221</span>
+          <span class="sx-brand__slash">/</span>
+          <span class="sx-brand__name">f(x)=0</span>
+        </a>
+        <p>
+          Bisection, Newton–Raphson and Secant methods compared on
+          <span class="sx-math">f</span>(<span class="sx-math">x</span>) =
+          <span class="sx-math">x</span>² − 4. Built at Prince Sultan
+          University.
+        </p>
+        <div class="sx-footer__formula" aria-hidden="true">
+          x<sub>n+1</sub> = x<sub>n</sub> − f(x<sub>n</sub>) / f′(x<sub>n</sub>)
+        </div>
+        <div class="sx-footer__status">
+          <span class="sx-live-dot"></span> Converged · |Δx| &lt; 10⁻⁶
+        </div>
+      </div>
+
+      <div class="sx-footer__col">
+        <div class="sx-footer__title">Study</div>
+        <a href="{{ 'abstract/' | url }}">Abstract</a>
+        <a href="{{ 'introduction/' | url }}">Introduction</a>
+        <a href="{{ 'methods/' | url }}">Methods</a>
+      </div>
+
+      <div class="sx-footer__col">
+        <div class="sx-footer__title">Findings</div>
+        <a href="{{ 'results/' | url }}">Results</a>
+        <a href="{{ 'comparison/' | url }}">Comparison</a>
+        <a href="{{ 'applications/' | url }}">Applications</a>
+        <a href="{{ 'conclusion/' | url }}">Conclusion</a>
+        <a href="{{ 'references/' | url }}">References</a>
+      </div>
+
+      <div class="sx-footer__col">
+        <div class="sx-footer__title">Report</div>
+        <a href="{{ 'report/' | url }}">Report page</a>
+        <a href="{{ 'report/PDF-Report.pdf' | url }}"
+          >PDF report <span>PDF</span></a
+        >
+        <a href="{{ 'privacy-notice/' | url }}">Privacy notice</a>
+        <a href="{{ 'academic-disclaimer/' | url }}">Academic disclaimer</a>
+        <a href="{{ 'copyright/' | url }}">Copyright</a>
+      </div>
+
+      <div class="sx-footer__col">
+        <div class="sx-footer__title">Contact</div>
+        <a href="mailto:inquiry@shoug-tech.com">inquiry@shoug-tech.com</a>
+        <a href="https://shoug-tech.com/" target="_blank" rel="noopener"
+          >shoug-tech.com ↗</a
+        >
+        <a
+          href="https://shoug-tech.com/work/projects/"
+          target="_blank"
+          rel="noopener"
+          >More projects ↗</a
+        >
+      </div>
+    </div>
+
+    <div class="sx-footer__bottom md-grid">
+      <span>{{ config.copyright }}</span>
+      <span
+        >Made by
+        <a
+          href="https://blueprint.shoug-tech.com/"
+          target="_blank"
+          rel="noopener"
+          >Blueprint</a
+        ></span
+      >
+    </div>
+  </div>
+</footer>
 {% endblock %}
